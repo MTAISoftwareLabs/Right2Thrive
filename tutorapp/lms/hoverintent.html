@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Accordion - Open on hoverintent</title>
+	<link rel="stylesheet" href="acc_css/jquery.ui.all.css">
+	<link rel="stylesheet" href="acc_css/demos.css">
+	<script src="acc_js/jquery-1.8.3.js"></script>
+	<script src="acc_js/jquery.ui.core.js"></script>
+	<script src="acc_js/jquery.ui.widget.js"></script>
+	<script src="acc_js/jquery.ui.accordion.js"></script>	
+	<script>
+	$(function() {
+		$( "#accordion" ).accordion({
+			event: "click hoverintent",
+			heightStyle: "content",
+			collapsible: true, active: false
+		});
+	});
+
+	var cfg = ($.hoverintent = {
+		sensitivity: 7,
+		interval: 100
+	});
+
+	$.event.special.hoverintent = {
+		setup: function() {
+			$( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
+		},
+		teardown: function() {
+			$( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
+		},
+		handler: function( event ) {
+			var that = this,
+				args = arguments,
+				target = $( event.target ),
+				cX, cY, pX, pY;
+
+			function track( event ) {
+				cX = event.pageX;
+				cY = event.pageY;
+			};
+			pX = event.pageX;
+			pY = event.pageY;
+			function clear() {
+				target
+					.unbind( "mousemove", track )
+					.unbind( "mouseout", arguments.callee );
+				clearTimeout( timeout );
+			}
+			function handler() {
+				if ( ( Math.abs( pX - cX ) + Math.abs( pY - cY ) ) < cfg.sensitivity ) {
+					clear();
+					event.type = "hoverintent";
+					// prevent accessing the original event since the new event
+					// is fired asynchronously and the old event is no longer
+					// usable (#6028)
+					event.originalEvent = {};
+					jQuery.event.handle.apply( that, args );
+				} else {
+					pX = cX;
+					pY = cY;
+					timeout = setTimeout( handler, cfg.interval );
+				}
+			}
+			var timeout = setTimeout( handler, cfg.interval );
+			target.mousemove( track ).mouseout( clear );
+			return true;
+		}
+	};
+	</script>
+</head>
+<body>
+
+<div id="accordion">
+	<h3>Functional Skills</h3>
+	<div>
+		<ul>
+			<li><a href="initial_assesment.php" class="textlink">Initial Assessment</a></li>
+			<li><a href="diagonstic_assessment.php" class="textlink">Diagnostic Assessment</a></li>
+			<li><a href="functionalskills.php" class="textlink">Functional Skills Resources</a></li>
+			<li><a href="pretest.php" class="textlink">PreTest</a></li>
+			<li><a href="editpinfo.php" class="textlink">Personal Information</a></li>
+			<li><a href="viewsubject.php" class="textlink">Subjects</a></li>
+			<li><a href="sub_lesson.php" class="textlink">Lessons</a></li>
+			<li><a href="viewhw.php" class="textlink">Homework</a></li>
+			<li><a href="personaldev.php" class="textlink">Personal Development</a></li>
+			<li><a href="UploadFiles.php" class="textlink">Upload Course Work</a></li>
+			<li><a href="DownFiles.php" class="textlink">Download Course Work</a></li>
+		</ul>
+	</div>
+	<h3>Individual Learning Plan</h3>
+	<div>
+		<ul>
+			<li><a href="GetAssignPlan.php" class="textlink">Download</a></li>
+			<li><a href="UploadPlan.php" class="textlink">Upload</a></li>		
+		</ul>
+	</div>
+	<h3>Individual Learning Review</h3>
+	<div>		
+		<ul>
+			<li><a href="GetAssignReview.php" class="textlink">Download</a></li>
+			<li><a href="AssignReview.php" class="textlink">Upload</a></li>		
+			<li><a href="javascript:downloadfile();" class="textlink">Evaluation Questionnaire</a></li>
+		</ul>
+	</div>
+	<h3>Learner Log Book</h3>
+	<div>
+		<ul>
+			<li><a href="StudentLogBook.php" class="textlink">Add Learner Log</a></li>
+			<li><a href="ViewStudentLogBook.php" class="textlink">View Learner Log</a></li>					
+		</ul>
+	</div>
+</div>
+</body>
+</html>

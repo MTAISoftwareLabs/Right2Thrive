@@ -1,0 +1,28 @@
+{
+    "user_id": 477,
+    "questionnaire": {
+        "submitted_at": "2026-05-17T13:24:12+01:00",
+        "in_work": "0",
+        "qualifications_held": "Apprenticeship Level 2 Digital Marketing",
+        "employment_detail": "",
+        "career_interests": "Digital Marketing",
+        "qualifications_wanted": "Digital marketing Level 3",
+        "skills": "",
+        "hobbies": "",
+        "has_disability": "0",
+        "disability_detail": "",
+        "terms_accepted": true,
+        "imported_from_legacy": true
+    },
+    "personal": {
+        "TXusername": "Danladi Roach",
+        "TXemailid": "danladidjroach@gmail.com",
+        "CBOcountry": "ENGLAND\/WALES",
+        "TXtelephone": "09876543",
+        "TXmobile": "09876543",
+        "TXbdate": "1996-10-01",
+        "TXethnicity": "Black British",
+        "rnd": "Male",
+        "legacy_import": true
+    }
+}

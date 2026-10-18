@@ -1,0 +1,64 @@
+[04-Mar-2026 16:34:23 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[04-Mar-2026 23:01:40 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[08-Mar-2026 19:20:55 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[12-Mar-2026 23:24:06 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[13-Mar-2026 07:39:36 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[13-Mar-2026 07:39:37 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[14-Mar-2026 00:42:06 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[14-Mar-2026 14:54:37 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[17-Mar-2026 06:58:50 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[19-Mar-2026 07:41:51 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[19-Mar-2026 07:41:52 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[19-Mar-2026 07:41:52 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[19-Mar-2026 09:03:35 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[19-Mar-2026 09:03:36 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[19-Mar-2026 09:03:56 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[19-Mar-2026 11:17:49 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[22-Mar-2026 22:52:19 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[23-Mar-2026 21:20:48 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[24-Mar-2026 03:34:25 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[24-Mar-2026 21:34:12 Europe/London] PHP Parse error:  Unclosed '{' on line 19 in /home/eafbbabd/public_html/app/coursedetail.php on line 549
+[28-Mar-2026 03:15:04 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[02-Apr-2026 01:50:55 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[02-Apr-2026 07:31:46 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[05-Apr-2026 13:12:22 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24
+[05-Apr-2026 13:13:13 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24
+[05-Apr-2026 13:13:29 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24
+[07-Apr-2026 20:35:14 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24
+[10-Apr-2026 11:57:47 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[10-Apr-2026 19:06:15 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[11-Apr-2026 07:41:15 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[11-Apr-2026 22:44:05 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[12-Apr-2026 19:01:40 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24
+[14-Apr-2026 00:42:11 Europe/London] PHP Parse error:  Unclosed '{' on line 83 in /home/eafbbabd/public_html/app/left.php on line 275
+[14-Apr-2026 13:05:26 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24
+[14-Apr-2026 17:59:43 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24
+[14-Apr-2026 17:59:52 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24
+[14-Apr-2026 18:00:01 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function runquery() in /home/eafbbabd/public_html/app/user_login.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/eafbbabd/public_html/app/user_login.php on line 24

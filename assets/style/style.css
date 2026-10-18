@@ -1,0 +1,347 @@
+ul.square {
+	padding-inline-start: 3px;
+	list-style-position: inside;
+	list-style-type: square;
+}
+.space35{
+	height:35px;
+}
+span.highlight {
+	color: red;
+	font-weight: bold;
+}
+.form-section{
+	background: #164a6d;
+	padding-top: 25px;
+}
+.desc-section {
+	padding-top: 25px;
+}
+.form-title{
+	margin-bottom: 0px;
+}
+.form-subtitle{
+	border-bottom: solid 2px #d7d7d7;
+	line-height: 35px;	
+}
+.row.form-card {
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px #999999;
+}
+.form-card .form-card-head {
+	background: #5185BF;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #fff;
+}
+h1.pagetitle {
+	color: #23B04C;
+	font-style: italic;
+	margin: 25px 0px;
+}
+.copywrite {
+    padding-top: 15px;
+}
+.btn-close{
+    font-size: 35px;
+    color: #dc3545;
+    padding: 0px;
+    background: none;
+    border: none;
+}
+.page-index a {
+    text-decoration: none;
+    color: #e1f3ff;
+}
+.popupbox .section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.bold{
+	font-weight:500;
+}
+
+/**********************
+ USER HEADER SECTION
+**********************/
+
+.user-login-page{
+	background-image: url(../../lms/images/user-login-page.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 2;
+}
+
+.user-login-page::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	/* background: rgb(245,245,245);
+	background: -moz-linear-gradient(45deg, rgba(245,245,245,1) 0%, rgba(3,121,189,1) 0%, rgba(12,119,186,1) 47%, rgba(12,90,168,1) 100%);
+	background: -webkit-linear-gradient(45deg, rgba(245,245,245,1) 0%, rgba(3,121,189,1) 0%, rgba(12,119,186,1) 47%, rgba(12,90,168,1) 100%);
+	background: linear-gradient(45deg, rgba(245,245,245,1) 0%, rgba(3,121,189,1) 0%, rgba(12,119,186,1) 47%, rgba(12,90,168,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f5f5f5",endColorstr="#0c5aa8",GradientType=1); */
+	background-color: var(--vibrant-color);;
+	opacity: 0.8;
+	backdrop-filter: blur(5px);
+}
+.header-area {
+	background-color: #fff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	/* display: flex;
+	align-items: center;
+	justify-content: space-between; */
+}
+.header-area .brand-area{
+	max-width: 90px;
+}
+.navbar-collapse{
+	justify-content: flex-end;
+}
+.header-area .brand-area img{	
+	width: 100%;
+}
+.header-area .main-menu{
+	display: flex;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+}
+.header-area .main-menu .menu-list{
+	list-style: none;
+	margin-left: 15px;
+}
+.header-area .main-menu .menu-list a{
+ color: #000;
+ transition: 0.4s;
+ text-decoration: none;
+}
+.header-area .main-menu .menu-list a:hover{
+	color: var(--color-primary, #1b8eb8);
+}
+.user-login-page .home-banner{
+	padding-top: 30px;
+}
+/* Banner typography: hub-public.css (.hub-banner-title) owns login hero — avoid nth-child overrides */
+.user-log-left-blocks{
+	background-color: rgb(0 0 0 / 40%);
+    backdrop-filter: blur(5px);
+    padding: 40px 40px;
+	border-radius: 15px;
+	position: relative;
+	z-index: 2;
+}
+.user-log-left-blocks h2{
+	font-size: 30px;
+	line-height: 1;
+	margin-bottom: 20px;
+}
+.user-log-left-blocks p{
+	margin-bottom: 20px;
+}
+.user-log-left-blocks ul{
+	padding: 0;
+	margin: 0;
+}
+.user-log-left-blocks ul li{
+	position: relative;
+	z-index: 1;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: var(--font-sans, Nunito, sans-serif);
+	margin-bottom: 20px;
+	padding-left: 20px;
+	line-height: 1.5;
+}
+.user-log-left-blocks ul li::before{
+	content: "";
+	width: 8px;
+	height: 8px;
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	top: 5px;
+
+
+}
+
+.social-buttons ul{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.social-buttons ul li{
+	list-style: none;
+	margin-left: 10px;
+
+}
+.social-buttons ul li a{
+	width: 25px;
+	height: 25px;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	display: block;
+}
+.social-buttons ul li a img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+
+
+.user-login-page .user-auth-section{
+	background-color: rgb(0 0 0 / 44%);
+	backdrop-filter: blur(5px);
+	padding: 40px 40px;
+	border-radius: 15px;
+	position: relative;
+	z-index: 2;
+}
+/* Login Form */
+.user-auth-section form .form-group{
+	margin-bottom: 20px;
+}
+.user-auth-section form .form-group label{
+	margin-bottom: 10px;
+	font-size: 18px;
+	letter-spacing: 1.6px;
+	font-family: var(--font-sans, Nunito, sans-serif);
+	text-transform: capitalize;
+}
+.user-auth-section form .form-control{
+	height: 45px;
+	font-size: 1.6rem;
+    font-family: var(--font-sans, Nunito, sans-serif);
+    line-height: 2;
+	padding: 5px 15px;
+	color: #000;
+	border-radius: 7px;
+}
+.user-auth-section .btn-outline-primary {
+    color: #fff;
+    border-color: var(--color-primary, #1b8eb8);
+    background-color: var(--color-primary, #1b8eb8);
+}
+.user-auth-section form .form-control::placeholder{
+	color: rgb(0, 0, 0, 0.3);
+}
+.user-auth-section .form-links{
+	margin: 15px 0px;
+}
+.user-auth-section .form-links a{
+	font-size: 1.6rem;
+    font-family: var(--font-sans, Nunito, sans-serif);
+    line-height: 1;
+	display: block;
+	transition: 0.4s;
+	margin-bottom: 10px;
+	display: block;
+}
+.user-auth-section .form-links a:hover{
+	color: #000;
+	text-decoration: none;
+
+}
+.user-auth-section .btn{
+	width: 100%;
+	height: 45px;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: var(--font-sans, Nunito, sans-serif);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 7px;
+}
+.user-auth-section .btn i{
+	margin-right: 8px;
+}
+user-login-page .copywrite{
+	color: #000;
+}
+
+@media screen and (min-width: 1200px) {   
+    .user-auth-section{
+		margin-left: 60px;
+	}
+}
+
+
+@media screen and (min-width: 992px) {   
+    .user-login-page .copywrite{
+		text-align: right !important;
+	}
+	.header-area,
+.user-login-page .home-banner{
+	position: relative;
+	z-index: 2;
+}
+}
+
+/* Mobile stacking: hub-public.css sets .user-auth-section z-index — do not force -1 (breaks taps) */
+
+@media screen and (max-width: 767px) {
+	.header-area{
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+   .header-area .navbar{
+	text-align: right;
+	justify-content: flex-end;
+	position: relative;
+	z-index: 1;
+   }
+   /* Legacy dropdown layout removed; hub-public.css handles bootstrap mobile collapse */
+   .header-area .navbar-collapse{
+	position: static;
+	top: auto;
+	right: auto;
+	background-color: transparent;
+	padding: 0;
+	box-shadow: none;
+	min-width: 0;
+   }
+   .header-area .navbar .main-menu{
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-start;
+   }
+   .header-area .main-menu .menu-list{
+	padding: 15px 0;
+	margin-left: 0;
+   }
+}
+
+
+@media screen and (max-width: 575px) {
+	.user-log-left-blocks,
+	.user-login-page .user-auth-section{
+		padding: 40px 24px;
+	}
+	.user-log-left-blocks ul li{
+		font-size: 14px;
+	}
+	
+}
+
+/*tanvir css*/
+
+nav.navbar.navbar-expand-md.navbar-light {
+    z-index: 89;
+}
+
+/* Desktop only: mobile needs lower stacking so the open navbar sits above the login column */
+@media screen and (min-width: 992px) {
+	.row.justify-content-center .order-1.order-lg-2.col-lg-5.col-md-10.mb-4.mb-lg-0 {
+		z-index: 9;
+	}
+}

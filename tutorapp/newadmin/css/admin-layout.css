@@ -1,0 +1,437 @@
+/* Right2Thrive: modern admin shell (load after adminstyle.css) */
+
+:root {
+  --admin-primary: #1b8eb8;
+  --admin-primary-dark: #157a9e;
+  --admin-accent: #0d6efd;
+  --admin-surface: #ffffff;
+  --admin-sidebar: #f4f7fb;
+  --admin-sidebar-border: #e2e8f0;
+  --admin-text: #1e293b;
+  --admin-text-muted: #64748b;
+  --admin-canvas: #eef2f7;
+  --admin-header-h: 64px;
+  --admin-radius: 12px;
+  --admin-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --admin-shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.1);
+  --admin-nav-master: #1b8eb8;
+  --admin-nav-integration: #0f766e;
+  --admin-nav-utils: #c2410c;
+  --admin-nav-jobs: #a21caf;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--admin-text);
+  background: var(--admin-canvas);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:link,
+a:visited,
+a:active {
+  color: var(--admin-primary);
+  font-size: inherit;
+  font-family: inherit;
+}
+
+a:hover {
+  color: var(--admin-primary-dark);
+}
+
+/* Top bar */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  min-height: var(--admin-header-h);
+  padding: 0.65rem 1.5rem;
+  background: var(--admin-surface);
+  border-bottom: 1px solid var(--admin-sidebar-border);
+  box-shadow: var(--admin-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.admin-header__brand:hover .admin-header__org {
+  color: var(--admin-primary);
+}
+
+.admin-header__logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.admin-header__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  line-height: 1.2;
+}
+
+.admin-header__org {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--admin-text);
+  letter-spacing: -0.02em;
+}
+
+.admin-header__product {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--admin-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.admin-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-header__welcome {
+  font-size: 0.875rem;
+  color: var(--admin-text-muted);
+}
+
+.admin-header__logout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #fff !important;
+  background: var(--admin-primary);
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: background 0.15s ease;
+}
+
+.admin-header__logout:hover {
+  background: var(--admin-primary-dark);
+  color: #fff !important;
+}
+
+/* Main layout table */
+table[width="999"] {
+  width: 100% !important;
+  max-width: 1400px;
+  margin: 1.25rem auto 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+
+table[width="999"] > tbody > tr > td[width="208"] {
+  width: 272px !important;
+  min-width: 240px;
+  max-width: 300px;
+  vertical-align: top;
+  padding: 0 0.75rem 0 1.25rem !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+table[width="999"] > tbody > tr > td[width="791"] {
+  width: auto !important;
+  vertical-align: top;
+  padding: 0 1.25rem 1.5rem 0.5rem !important;
+  background: transparent !important;
+}
+
+/* Sidebar navigation */
+.admin-nav {
+  background: var(--admin-sidebar);
+  border: 1px solid var(--admin-sidebar-border);
+  border-radius: var(--admin-radius);
+  padding: 0.75rem 0;
+  box-shadow: var(--admin-shadow);
+  position: sticky;
+  top: calc(var(--admin-header-h) + 12px);
+  max-height: calc(100vh - var(--admin-header-h) - 24px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.admin-nav__section {
+  padding: 0 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.admin-nav__section:last-child {
+  margin-bottom: 0.25rem;
+}
+
+.admin-nav__heading {
+  margin: 0 0 0.35rem 0.35rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--admin-text-muted);
+  border-radius: 6px;
+}
+
+.admin-nav__subheading {
+  margin: 0.65rem 0 0.25rem 0.35rem;
+  padding: 0 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--admin-text-muted);
+}
+
+.admin-nav__section--master .admin-nav__heading {
+  color: #fff;
+  background: linear-gradient(135deg, var(--admin-nav-master), #1490b5);
+}
+
+.admin-nav__section--integration .admin-nav__heading {
+  color: #fff;
+  background: linear-gradient(135deg, var(--admin-nav-integration), #0d9488);
+}
+
+.admin-nav__section--utils .admin-nav__heading {
+  color: #fff;
+  background: linear-gradient(135deg, var(--admin-nav-utils), #ea580c);
+}
+
+.admin-nav__section--jobs .admin-nav__heading {
+  color: #fff;
+  background: linear-gradient(135deg, var(--admin-nav-jobs), #c026d3);
+}
+
+.admin-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-nav__list li {
+  margin: 0;
+  padding: 0;
+}
+
+.admin-nav__list a {
+  display: block;
+  padding: 0.45rem 0.65rem 0.45rem 0.75rem;
+  margin-bottom: 2px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--admin-text) !important;
+  text-decoration: none !important;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.admin-nav__section--master .admin-nav__list a:hover {
+  background: rgba(27, 142, 184, 0.12);
+  border-left-color: var(--admin-nav-master);
+}
+
+.admin-nav__section--integration .admin-nav__list a:hover {
+  background: rgba(15, 118, 110, 0.12);
+  border-left-color: var(--admin-nav-integration);
+}
+
+.admin-nav__section--utils .admin-nav__list a:hover {
+  background: rgba(194, 65, 12, 0.1);
+  border-left-color: var(--admin-nav-utils);
+}
+
+.admin-nav__section--jobs .admin-nav__list a:hover {
+  background: rgba(162, 28, 175, 0.1);
+  border-left-color: var(--admin-nav-jobs);
+}
+
+/* Content area */
+table[width="97%"],
+table[width="95%"] {
+  width: 100% !important;
+}
+
+.schoolfont {
+  font-family: inherit !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--admin-text) !important;
+  letter-spacing: -0.02em;
+  padding: 0.25rem 0 !important;
+}
+
+.fontblue {
+  color: var(--admin-primary) !important;
+  font-weight: 600 !important;
+  font-size: inherit !important;
+}
+
+.graydotline {
+  background: none !important;
+  border-bottom: 1px solid var(--admin-sidebar-border) !important;
+  height: 1px !important;
+  padding: 0 !important;
+}
+
+/* Tab strips → pills */
+.midtabgreen,
+.graymid {
+  background: var(--admin-surface) !important;
+  border: 1px solid var(--admin-sidebar-border) !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+.midtabgreen {
+  background: linear-gradient(180deg, rgba(27, 142, 184, 0.15), rgba(27, 142, 184, 0.08)) !important;
+  border-color: rgba(27, 142, 184, 0.35) !important;
+  font-weight: 600 !important;
+  color: var(--admin-text) !important;
+}
+
+.midtabgreen a {
+  color: var(--admin-text) !important;
+}
+
+.greendeactfont {
+  font-family: inherit !important;
+  font-size: 0.8125rem !important;
+  color: var(--admin-text) !important;
+  text-decoration: none !important;
+}
+
+a.greendeactfont:hover {
+  color: var(--admin-primary) !important;
+}
+
+.greenborder {
+  border: 1px solid var(--admin-sidebar-border) !important;
+  border-radius: var(--admin-radius);
+  overflow: hidden;
+  background: var(--admin-surface);
+  box-shadow: var(--admin-shadow);
+}
+
+.suntable {
+  background: var(--admin-surface) !important;
+}
+
+.greenborbotte {
+  border-color: var(--admin-sidebar-border) !important;
+}
+
+.toheaderbg {
+  background: var(--admin-primary) !important;
+  font-size: 0.8125rem !important;
+  color: #fff !important;
+  padding: 0.75rem 1rem !important;
+  margin: 0 !important;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* Links on teal bars: global a:link uses --admin-primary and would match the bar */
+.toheaderbg .schoolfont {
+  color: #fff !important;
+  padding-top: 0 !important;
+}
+
+.toheaderbg a:link,
+.toheaderbg a:visited,
+.toheaderbg a:active {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.toheaderbg a:hover {
+  color: #e8f7fc !important;
+  text-decoration: underline;
+}
+
+.bodytext {
+  font-family: inherit !important;
+  font-size: 0.875rem !important;
+  line-height: 1.55;
+}
+
+.headingtd {
+  background: var(--admin-primary) !important;
+  font-size: 0.8125rem !important;
+}
+
+.button,
+input[type="submit"],
+input[type="button"] {
+  font-family: inherit !important;
+  font-size: 0.875rem !important;
+  border-radius: 8px !important;
+  padding: 0.4rem 1rem !important;
+  cursor: pointer;
+}
+
+.textbox,
+.txtbox,
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  font-family: inherit !important;
+  font-size: 0.875rem !important;
+  border-radius: 6px !important;
+}
+
+.admin-welcome {
+  max-width: 52rem;
+  padding: 0.5rem 0.25rem 2rem;
+}
+
+.admin-welcome .schoolfont {
+  padding-top: 0 !important;
+}
+
+.admin-welcome__rule {
+  margin: 0.75rem 0 1.25rem;
+}
+
+@media (max-width: 960px) {
+  table[width="999"] > tbody > tr > td[width="208"],
+  table[width="999"] > tbody > tr > td[width="791"] {
+    display: block;
+    width: 100% !important;
+    max-width: none;
+    padding: 0 1rem !important;
+  }
+
+  table[width="999"] > tbody > tr > td[width="208"] {
+    margin-bottom: 1rem;
+  }
+
+  .admin-nav {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+}

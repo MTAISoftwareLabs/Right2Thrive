@@ -1,0 +1,378 @@
+/* CSS Document of Internal Tracking System */
+
+body
+{
+	margin:0px;
+	background-color: #F2F2F2;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+/*css for add employee*/
+
+.MainWhiteBtm
+{
+	background: url(../nimages/main_btm_white_mid.gif) repeat-x;
+}
+.MainWhiteLeft
+{
+	background: url(../nimages/main_white_left_side.gif) repeat-y;
+}
+.MainWhiteRight
+{
+	background: url(../nimages/main_white_right_side.gif) repeat-y;
+}
+.WhiteBg
+{
+	background-color: #ffffff;
+}
+.GrayBg
+{
+	background-color: #A4C01E;
+}
+.orangeBg
+{
+	background-color: #A4C01E;
+}
+.MidGrayBgTop
+{
+	background-color: #F4F4F4;
+	border-left: 1px solid #CFCFCF;
+	border-top: 1px solid #CFCFCF;
+	border-right: 1px solid #CFCFCF;
+}
+.MidorangeBgTop
+{
+	background-color: #F4F4F4;
+	border-left: 1px solid #CFCFCF;
+	border-top: 1px solid #CFCFCF;
+	border-right: 1px solid #CFCFCF;
+}
+.MidGrayBgBtm
+{
+	background: url(../nimages/midgray_btm_mid.gif) repeat-x;
+}
+.MidorangeBgBtm
+{
+	background: url(../nimages/midgray_btm_mid.gif) repeat-x;
+}
+.FielTable
+{
+	background: url(../nimages/field_white_mid.gif) top repeat-x;
+	padding-left:18px;
+}
+.FielTableBig
+{
+	background: url(../nimages/big_white_mid_croner.gif) top repeat-x;
+}
+.WhiteTitleText{
+	font-size: 10pt;  color: #FFFFFF;  font-weight:bold;  text-decoration:none;
+	padding-left: 5px;	
+}
+.GrayText{
+	font-size: 8.5pt;  color: #424242;  font-weight:normal;  text-decoration:none;
+}
+
+.GrayText a{
+	font-size: 8.5pt;  color:#993366;  font-weight:normal;  text-decoration:none;
+}
+.Star
+{
+	font-size: 8.5pt;
+	color: #FF6C00;
+}
+.TextField {
+	font-family:Verdana;
+	font-size:10px;
+	color: #000000;
+	padding-left:3px;
+	margin:0px;
+	height:15px;
+	width:135px;
+	border:solid 1px #B5B5B5;
+	background:#ffffff   }
+.LongTextField
+{
+	font-family:Verdana;
+	font-size:10px;
+	color: #000000;
+	padding-left:3px;
+	margin:0px;
+	height:15px;
+	width:270px;
+	border:solid 1px #B5B5B5;
+	background:#ffffff
+}	
+.TexTarea {
+	font-family:Verdana;
+	font-size:10px;
+	color: #000000;
+	padding-left:3px;
+	margin:0px;
+	height:50px;
+	width:135px;
+	border:solid 1px #B5B5B5;
+}
+.Formselect{
+ font: 11px Verdana, Geneva, Arial, Helvetica, sans-serif;
+ color: #102132;
+ width:135px;
+ border: 1px thin #B5B5B5;
+}
+.TopPadding
+{
+	padding-top:5px;
+}
+.HeadingWelcome
+{
+	font-family:Verdana;
+	font-size:15px;
+	color: #035D97;
+	font-weight: bold;
+}
+.HeadingAdmin
+{
+	font-family:Verdana;
+	font-size:14px;
+	color: #EE1E23;
+	font-weight: bold;
+}
+.WelcomeTable
+{
+	border-left: solid 1px #BDBDBD;
+	border-right: solid 1px #BDBDBD;
+	border-bottom: solid 1px #BDBDBD;
+}
+.WelcomeHeadingBorder
+{
+	background: url(../nimages/welcome_top_mid.gif) top repeat-x;
+}
+.Details
+{
+	font-family:Verdana;
+	font-size:13px;
+	color: #FF7E00;
+	font-weight: bold;
+}
+.WelcomeBtm
+{	
+	background: url(../nimages/welcome_btm.gif) top repeat-x;
+}
+.WelcomeBtmLine
+{	
+	background: url(../nimages/btm_line_welcome.gif) center repeat-x;
+}
+.HeadingEmp
+{
+	font-family:Verdana;
+	font-size:13px;
+	color: #697E7F;
+	font-weight: bold;
+}
+.MainGrayTable
+{
+	background-color:#DEDDDD;
+}
+.TopHeaderRight
+{
+	background: url(../nimages/top_header.gif) left bottom no-repeat;	
+}
+.TopHeaderLeft
+{
+	background: url(../nimages/heater_left_bg.gif) left bottom repeat-x;
+}
+.LeftNaveigationColor
+{
+	background-color:#F2F2F2;
+}
+.BtmStrip
+{
+	background: url(../nimages/btm_strip.gif) right no-repeat;
+	background-color:#ffffff;
+}
+.MainBtmLine
+{
+	background: url(../nimages/main_btm_line.gif) left top no-repeat;
+	height:6px;
+	background-color:#a2a0a1;
+}
+.CoTable03Top
+{
+	background:url(../nimages/co_03_mid_top.gif) left top repeat-x ;
+}
+.CoTable03Left
+{
+	background:url(../nimages/co_03_left.gif) left top repeat-y ;
+}
+.CoTable03Right
+{
+	background:url(../nimages/co_03_right.gif) right top repeat-y ;
+}
+.CoTable03btm
+{
+	background:url(../nimages/co_03_mid_btm.gif) left top repeat-x ;
+}
+.LoginSmallRed
+{
+	font-size: 10pt;  color: #FF0707;  font-weight:normal;  text-decoration:none;
+}
+.LinkGrayTxt:link
+{
+	font-size: 8.5pt;  color: #424242;  font-weight:normal;  text-decoration:none;
+}
+.LinkGrayTxt:active
+{
+	font-size: 8.5pt;  color: #424242;  font-weight:normal;  text-decoration:none;
+}
+.LinkGrayTxt:visited
+{
+	font-size: 8.5pt;  color: #424242;  font-weight:normal;  text-decoration:none;
+}
+.LinkGrayTxt:hover
+{
+	font-size: 8.5pt;  color: #424242;  font-weight:normal;  text-decoration:underline;
+}
+.LoginTopHeader
+{
+	background:url(../nimages/topheaderBG.gif) no-repeat left;
+	height:33px;
+}
+.LoginOrrangeLine
+{
+	background: url(../nimages/orrange_line.gif) top repeat-x left;
+}
+.LoginWelcome
+{
+	font-size: 10pt;
+	color: #6B6A68;  
+	font-weight:bold;  
+	text-decoration:none;
+}
+.LoginWcTxt
+{
+	font-size: 10pt;
+	color: #9DBC00;  
+	font-weight:bold;  
+	text-decoration:none;
+	padding-right:15px;
+}
+/*end css for add employee*/
+/*final form*/
+.MidWhiteBg
+{
+	background-color:#ffffff;
+	padding-left:18px;
+}
+
+.MainTablePadding
+{
+	padding-left:50px;
+}
+.SmallWhitetable
+{
+	background: url(../nimages/field_white_mid.gif) repeat-x;
+}
+input.SmallCheckbox
+{
+	width: 12px;
+	height: 12px;
+}
+.TopHeaderRight
+{
+	background: url(../nimages/top_header_bg.gif) left bottom repeat-x;	
+}
+.BannerBg
+{
+	background: url(../nimages/banner_bg.gif) left bottom repeat-x;
+}
+.DotedLine
+{
+	background: url(../nimages/dot_line.gif) left repeat-x;
+}
+.RememberMe
+{
+	background: url(../nimages/remember_password.gif) no-repeat;
+	padding-left:8px;	
+}
+.BlueTable
+{
+	background:#A4C01E;
+}
+.OrrangeHeading
+{
+	font-size: 13px;
+	color: #9DBC00;  
+	font-weight:bold;  
+	text-decoration:none;
+}
+.GreayHeading
+{
+	font-size: 13px;
+	color: #545253;  
+	font-weight:bold;  
+	text-decoration:none;
+}
+
+.GreayHeading1
+{
+	font-size: 13px;
+	color: #545253;  
+	text-decoration:none;
+}
+
+.BigGreayTxt
+{
+	font-size: 11px;
+	color: #545253;  
+	font-weight:bold;  
+	text-decoration:none;
+}
+
+
+.BigGreayTxt a
+{
+	font-size: 11px;
+	color: #545253;  
+	font-weight:bold;  
+	text-decoration:none;
+}
+
+.BigGreayTxt a:hover{
+	text-decoration:underline;
+}
+
+.SmallGrayTabel
+{
+	border:1px solid #D6D6D6;
+}
+
+.TextField_New {
+	font-family:Verdana;
+	font-size:13px;
+	color: #000000;
+	padding-left:3px;
+	margin:0px;
+	height:21px;
+	width:210px;
+	border:solid 1px #B5B5B5;
+	background:#ffffff   }
+/* end final form*/
+.One_Text{
+	font-family:Verdana;
+	font-size:13px;
+	color: #000000;
+	padding-left:3px;
+	margin:0px;
+	height:21px;
+	width:300px;
+	border:solid 1px #B5B5B5;
+	background:#ffffff   }
+	
+.Cmb_Style{
+	font-family:Verdana;
+	font-size:13px;
+	color: #000000;
+	padding-left:3px;
+	margin:0px;
+	/*height:21px;
+	width:300px;*/
+	border:solid 1px #B5B5B5;
+	background:#ffffff   }

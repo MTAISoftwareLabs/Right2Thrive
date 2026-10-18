@@ -1,0 +1,47 @@
+.textdecore{
+	font-family:Verdana;
+	font-size:11px;
+	color:#000000;
+	}
+.textdecore1{
+	font-family:Verdana;
+	font-size:14px;
+	color:#ede960;
+	margin-left:10px;
+	}
+.textdecore2{
+	font-family:Verdana;
+	font-size:12px;
+	color:#fff;
+	margin-right:10px;
+	}
+.textdecore3{
+	font-family:Verdana;
+	font-size:14px;
+	color:#CC3300;
+	margin-right:5px;
+	}
+.textlink{
+	font-family:Verdana;
+	font-size:13px;
+	color:#0a5179;
+	text-decoration:none;
+	margin:10px;
+	}
+a.textlink{
+	color:#0a5179;
+	}
+a:hover.textlink{
+	color:#ff0001;
+	}
+.imagedec{
+margin-left:150px;
+
+}
+.textlink1{
+	font-family:Verdana;
+	font-size:14px;
+	color:#fff;
+	text-decoration:none;
+	margin-left:500px;
+	}

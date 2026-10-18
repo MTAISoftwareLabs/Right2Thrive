@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	# If the site document root is a subfolder URL (e.g. example.com/app21/), use:
+	# RewriteBase /app21/
+
+	RewriteRule ^uploads/archive/(.*)$ legacy_archive.php?path=$1 [L,QSA]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}.php -f
+	RewriteRule ^(.*)$ $1.php [L,QSA]
+</IfModule>
+
+DirectoryIndex index.php index.html

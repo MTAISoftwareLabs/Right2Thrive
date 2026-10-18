@@ -1,0 +1,225 @@
+<?
+include_once 'dbConnection.php';
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title><? echo sitename;?>Change Password</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="lms.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+function closewin()
+{
+	document.location='ChangePass.php';
+}
+function validation()
+{
+	if (document.FRMLEARNCHANGEPASSWORD.TXLEARNOLDPASSWORD.value == "")
+	{	
+		alert("Please enter old password !!");
+		document.FRMLEARNCHANGEPASSWORD.TXLEARNOLDPASSWORD.focus();
+		return false;
+	}
+	if (document.FRMLEARNCHANGEPASSWORD.TXLEARNNEWPASSWORD.value == "")
+	{	
+		alert("Please enter new password !!");
+		document.FRMLEARNCHANGEPASSWORD.TXLEARNNEWPASSWORD.focus();
+		return false;
+	}
+	if(document.FRMLEARNCHANGEPASSWORD.TXLEARNNEWPASSWORD.value.length<4)
+	{	
+		alert("Password must be more than 4 character!");
+		document.FRMLEARNCHANGEPASSWORD.TXLEARNNEWPASSWORD.focus();
+		return false;
+	}
+	if(document.FRMLEARNCHANGEPASSWORD.TXLEARNNEWPASSWORD.value.length>16)
+	{	
+		alert("Password not more than 16 character!");
+		document.FRMLEARNCHANGEPASSWORD.TXLEARNNEWPASSWORD.focus();
+		return false;
+	}
+	
+	if (document.FRMLEARNCHANGEPASSWORD.TXLEARNCONFIRMPASSWORD.value == "")
+	{	
+		alert("Please enter confirm password !!");
+		document.FRMLEARNCHANGEPASSWORD.TXLEARNCONFIRMPASSWORD.focus();
+		return false;
+	}
+	if (document.FRMLEARNCHANGEPASSWORD.TXLEARNNEWPASSWORD.value != document.FRMLEARNCHANGEPASSWORD.TXLEARNCONFIRMPASSWORD.value)
+	{	
+		alert("new password and confirm password must be same !!");
+		document.FRMLEARNCHANGEPASSWORD.TXLEARNNEWPASSWORD.focus();
+		document.FRMLEARNCHANGEPASSWORD.TXLEARNCONFIRMPASSWORD.value = "";
+		return false;
+	}
+	return true;	
+}
+</script>
+
+<script language="JavaScript" src="./txteditor.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getnewwin(obj,fid)
+{
+	new1=window.open("viewdownload.php?id="+obj+"&fid="+fid);
+}
+function openwin(obj)
+{
+	new1=window.open("Detail_SuggestJob.php?id="+obj,"",'height=500,width=600,scrollbars=yes,top=50 left=150');
+	return true;
+}
+</script><style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #AFE0FA;
+}
+-->
+</style>
+<link href="css.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+<pre>&nbsp;</pre>
+<table width="857"  cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="855">
+    <div align="right"><? include "logout.php";?></div></td>
+  </tr>
+</table>
+<form name="frmex" method="post">
+<table width="775" border="0" align="center" cellpadding="0" cellspacing="0" style="border : 1px solid  #cccccc;">
+ 
+  <tr>
+    <td valign="top" width="25%" bgcolor="#FFFFFF"> 
+      <? include "leftpanel.php";?>    </td> 
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td><? include "includewelcome.php";?></td>
+      </tr>
+      <tr>
+        <td height="431"><?
+			if (!isset($_GET['next']))
+			{
+			?>
+            <br>
+          <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+              <tr>
+                <td width="2%"><img src="images/changep_left_cor.jpg" width="11" height="20"></td>
+                <td width="96%" background="images/changep_center_cor.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="welcome">Change Password</td>
+                      <td><div align="right"><font color="#FFFFFF"><strong>::</strong></font></div></td>
+                    </tr>
+                </table></td>
+                <td width="2%" background="images/changep_right_cor.jpg">&nbsp;</td>
+              </tr>
+              <tr>
+                <td height="50" colspan="3" style="border-right : 1px solid  #4681C4; border-left : 1px solid  #4681C4;">&nbsp;
+                    <table class="" width="90%" align="center">
+                      <tr>
+                        <td class="bodytext">Old Password</td>
+                        <td><input name="TXLEARNOLDPASSWORD" type="password" class="textbox"></td>
+                      </tr>
+                      <tr>
+                        <td class="bodytext">New Password</td>
+                        <td><input name="TXLEARNNEWPASSWORD" type="password" class="textbox"></td>
+                      </tr>
+                      <tr>
+                        <td class="bodytext">Confirm Password</td>
+                        <td><input name="TXLEARNCONFIRMPASSWORD" type="password" class="textbox"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td width="11" ><img src="images/changebttm_left_cor.jpg" width="11" height="25"></td>
+                <td height="22" background="images/changebttm_center_cor.jpg" ><div align="right">
+                    <input name="image" type="image" src="images/submitbttn.jpg" alt="Submit" width="67" height="17">
+                </div></td>
+                <td width="11" ><div align="right"><img src="images/changebttm_right_cor.jpg" width="11" height="25"></div></td>
+              </tr>
+            </table>
+          <?
+			  }
+			  else
+			  {
+			  		$sqlchange = "select vUserEmailId,vUserName from cpo_usermaster where vUserEmailId='".$_SESSION['email_id']."' and vUserPassword='".$_POST['TXLEARNOLDPASSWORD']."'";
+					$rschange = runquery1($sqlchange);	
+					$num = $rschange ? mysql_num_rows($rschange) : 0 ;
+					if ($num > 0 )
+					{
+						$rsdata = mysql_fetch_array($rschange);
+						$sqldelete = "update cpo_usermaster set vUserPassword='".$_POST['TXLEARNNEWPASSWORD']."' where iUserId=".$_SESSION['user_id'];
+						runquery1($sqldelete);
+						$msg = "Password changed successfully.";
+						$fromname = "CareerPaths Online";
+						$fromaddress = admin_email;
+						$toname = $rsdata['vUserName'];
+						$toaddress = $rsdata['vUserEmailId'];
+						$subject = "Change password for CareerPaths Online.";
+						$message ="<html><body><p>Dear ".$rsdata['vUserName'].",</p>";
+						$message .= "<p>You have successfully change your password from '".$_POST['TXLEARNOLDPASSWORD']."' to '".$_POST['TXLEARNNEWPASSWORD']."'</p>";
+						$message .= "<p>Warm Regard From,</p>";
+						$message .= "<p>CareerPaths Online Team</p></body></html>";
+						SendingMail($fromname, $fromaddress, $toname, $toaddress, $subject, $message);
+						$color = "black";
+						addlog(4);
+					}
+					else
+					{
+						$msg = "Your Password does not match !";
+						$color = "red";						
+					} ?>
+            <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+              <tr>
+                <td width="2%"><img src="images/changep_left_cor.jpg" width="11" height="20"></td>
+                <td width="96%" background="images/changep_center_cor.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="welcome">Change Password</td>
+                      <td><div align="right"><font color="#FFFFFF"><strong>::</strong></font></div></td>
+                    </tr>
+                </table></td>
+                <td width="2%" background="images/changep_right_cor.jpg">&nbsp;</td>
+              </tr>
+              <tr>
+                <td height="50" colspan="3" style="border-right : 1px solid  #4681C4; border-left : 1px solid  #4681C4;">&nbsp;
+                    <table class="" width="90%" align="center">
+                      <tr>
+                        <td colspan="2" align="center" class="bodytext"><font color="<? echo $color;?>"><b><? echo $msg?></b></font></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">&nbsp;</td>
+                      </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td width="11" ><img src="images/changebttm_left_cor.jpg" width="11" height="25"></td>
+                <td height="22" background="images/changebttm_center_cor.jpg" ><div align="right"><img style="cursor:hand" src="images/closebutton.gif" alt="Close" width="67" height="17" onClick="closewin()"></div></td>
+                <td width="11" ><div align="right"><img src="images/changebttm_right_cor.jpg" width="11" height="25"></div></td>
+              </tr>
+            </table>
+          <p>
+              <? }
+			  ?>
+            </p>
+          <div align="right"><strong><a href="javascript:history.back();" class="textlink">Back</a></strong></div>
+          <p>&nbsp; </p></td>
+      </tr>
+    </table>
+      <p>&nbsp;</p></td>
+    <td><img src="images/spacer.gif" width="1" height="350" border="0" alt=""></td>
+  </tr>
+      <? include "includebottom.php";?>
+</table>
+</form>
+<map name="lms_1_r2_c2Map">
+  <area shape="rect" coords="491,88,551,100" href="logout.php">
+</map>
+</body>
+</html>

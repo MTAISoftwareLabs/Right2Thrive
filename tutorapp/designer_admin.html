@@ -1,0 +1,694 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML >
+ <HEAD>
+  <LINK REL="STYLESHEET" HREF="http://www.groupboard.com/style.css" TYPE="text/css">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=ISO-8859-1">
+  <TITLE>Groupboard Designer</TITLE>
+<script language=javascript src=http://www.groupboard.com/groupconf/groupconf.js></script>
+<script language="JavaScript">
+var pw = '';
+function show_groupconf_help()
+{
+window.open('http://www.groupboard.com/groupconf/help.html', 'groupconf_help', 'scrollbars=yes,width=600,height=500');
+}
+
+function show_register()
+{
+window.open('http://www.groupboard.com/groupconf/gcregister.shtml', 'groupconf_register', 'scrollbars=yes,width=600,height=500');
+}
+
+function start()
+{
+var username = '';
+var password = '';
+username = document.form1.username.value;
+var conf_id = 113577;
+var conf_pw = pw;
+// The following values can be added to the 'flags' parameter:
+// 1 = listen only (microphone will be disabled)
+// 8 = use high bandwidth (26kbps instead of 13kbps) in one-to-one calls (note: low bandwidth is always used in a conference)
+// 16 = start iconified
+// 32 = show other users
+// 64 = auto record tickbox OFF by default (note: this is overridden if you have previously changed your sound options)
+// 128 = prompt for conference password
+var flags = 40;
+flags += 128;
+if (null == document.GroupConf || typeof(document.GroupConf.startGroupconf) == 'undefined')
+{
+alert('Error: voice conferencing plugin not installed - please click on the installation link. If you continue getting this message, check your browser security settings.');
+}
+else
+{
+document.GroupConf.startGroupconf(username, password, conf_pw, conf_id, flags, 'www.groupboard.com');
+}
+}
+
+function finishedLoading()
+{
+document.form1.submit.disabled = false;
+document.form1.submit.value = 'Launch Voice Conferencing';
+}
+</script>
+  <SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!-- 
+
+function str_ireplace(removethis,tothis,strings)
+{while (strings.indexOf(removethis) != -1) 
+{strings = strings.replace(removethis ,tothis);}
+return strings;}
+
+function showicons()
+{
+    window.open('/mp/show_thumbs.cgi?board_id=113577&math=true', 'icons', 'scrollbars=no,width=360,height=320');
+}
+
+function showgraph()
+{
+    window.open('/graphplotter/newgraph.php?range=4&width=800&height=400&filename=/home/gboard/htdocs/java_v3/graphs/graph.113577.png&clear_callback=gb.set_background(\'\')&callback=gb.set_background(\'graphs/graph.113577.png?\'%2bMath.floor(Math.random()*10000000))', 'graphplotter', 'scrollbars=no,width=190,height=175');
+}
+var tName = 'http://www.groupboard.com/Icons.3dlook/tool_';
+var sName = 'http://www.groupboard.com/Icons.3dlook/size_';
+var cName = 'http://www.groupboard.com/Icons.3dlook/colour_';
+var aName = 'http://www.groupboard.com/Icons.3dlook/allow_';
+var on    = '_on';
+var gif   = '.gif';
+
+var using_eraser = false;
+var cur_tool = 4;
+var cur_colour = 6;
+var cur_size = 1;
+var prev_tool = -1;
+var prev_size;
+var prev_colour;
+var tImg0  = new Image(); tImg0.src  = tName +     '0' + gif;
+var tImg1  = new Image(); tImg1.src  = tName +     '1' + gif;
+var tImg2  = new Image(); tImg2.src  = tName +     '2' + gif;
+var tImg3  = new Image(); tImg3.src  = tName +     '3' + gif;
+var tImg4  = new Image(); tImg4.src  = tName +     '4' + gif;
+var tImg5  = new Image(); tImg5.src  = tName +    '11' + gif;
+var tImg6  = new Image(); tImg6.src  = tName +    '12' + gif;
+var tImg7  = new Image(); tImg7.src  = tName +    '13' + gif;
+var tImg8  = new Image(); tImg8.src  = tName +    '49' + gif;
+var tImg9  = new Image(); tImg9.src  = tName +    '53' + gif;
+var tImg10 = new Image(); tImg10.src = tName +    '55' + gif;
+var tImg11 = new Image(); tImg11.src = tName +    '61' + gif;
+var tImg12 = new Image(); tImg12.src = tName +    '67' + gif;
+var tImg13 = new Image(); tImg13.src = tName +    '68' + gif;
+var tImg14 = new Image(); tImg14.src = tName +    '69' + gif;
+var tImg15 = new Image(); tImg15.src = tName +  '0_on' + gif;
+var tImg16 = new Image(); tImg16.src = tName +  '1_on' + gif;
+var tImg17 = new Image(); tImg17.src = tName +  '2_on' + gif;
+var tImg18 = new Image(); tImg18.src = tName +  '3_on' + gif;
+var tImg19 = new Image(); tImg19.src = tName +  '4_on' + gif;
+var tImg20 = new Image(); tImg20.src = tName + '11_on' + gif;
+var tImg21 = new Image(); tImg21.src = tName + '12_on' + gif;
+var tImg22 = new Image(); tImg22.src = tName + '13_on' + gif;
+var tImg23 = new Image(); tImg23.src = tName + '49_on' + gif;
+var tImg24 = new Image(); tImg24.src = tName + '53_on' + gif;
+var tImg25 = new Image(); tImg25.src = tName + '55_on' + gif;
+var tImg26 = new Image(); tImg26.src = tName + '61_on' + gif;
+var tImg27 = new Image(); tImg27.src = tName + '67_on' + gif;
+var tImg28 = new Image(); tImg28.src = tName + '68_on' + gif;
+var tImg29 = new Image(); tImg29.src = tName + '69_on' + gif;
+var tImg30 = new Image(); tImg30.src = tName + '64_on' + gif;
+var tImg31 = new Image(); tImg31.src = tName + '64' + gif;
+var tImg32 = new Image(); tImg32.src = tName + '71_on' + gif;
+var tImg33 = new Image(); tImg33.src = tName + '71' + gif;
+var sImg1  = new Image(); sImg1.src  = sName +     '1' + gif;
+var sImg2  = new Image(); sImg2.src  = sName +     '2' + gif;
+var sImg3  = new Image(); sImg3.src  = sName +     '3' + gif;
+var sImg4  = new Image(); sImg4.src  = sName +     '4' + gif;
+var sImg5  = new Image(); sImg5.src  = sName +     '5' + gif;
+var sImg6  = new Image(); sImg6.src  = sName +     '6' + gif;
+var sImg7  = new Image(); sImg7.src  = sName +     '7' + gif;
+var sImg8  = new Image(); sImg8.src  = sName +     '8' + gif;
+var sImg9  = new Image(); sImg9.src  = sName +     '9' + gif;
+var sImg10 = new Image(); sImg10.src = sName +    '10' + gif;
+var sImg11 = new Image(); sImg11.src = sName +  '1_on' + gif;
+var sImg12 = new Image(); sImg12.src = sName +  '2_on' + gif;
+var sImg13 = new Image(); sImg13.src = sName +  '3_on' + gif;
+var sImg14 = new Image(); sImg14.src = sName +  '4_on' + gif;
+var sImg15 = new Image(); sImg15.src = sName +  '5_on' + gif;
+var sImg16 = new Image(); sImg16.src = sName +  '6_on' + gif;
+var sImg17 = new Image(); sImg17.src = sName +  '7_on' + gif;
+var sImg18 = new Image(); sImg18.src = sName +  '8_on' + gif;
+var sImg19 = new Image(); sImg19.src = sName +  '9_on' + gif;
+var sImg20 = new Image(); sImg20.src = sName + '10_on' + gif;
+
+var cImg1  = new Image(); cImg1.src  = cName +      '0' + gif;
+var cImg2  = new Image(); cImg2.src  = cName +      '1' + gif;
+var cImg3  = new Image(); cImg3.src  = cName +      '2' + gif;
+var cImg4  = new Image(); cImg4.src  = cName +      '3' + gif;
+var cImg5  = new Image(); cImg5.src  = cName +      '4' + gif;
+var cImg6  = new Image(); cImg6.src  = cName +      '5' + gif;
+var cImg7  = new Image(); cImg7.src  = cName +      '6' + gif;
+var cImg8  = new Image(); cImg8.src  = cName +      '7' + gif;
+var cImg9  = new Image(); cImg9.src  = cName +      '8' + gif;
+var cImg10 = new Image(); cImg10.src = cName +      '9' + gif;
+var cImg11 = new Image(); cImg11.src = cName +     '10' + gif;
+var cImg12 = new Image();
+var cImg13 = new Image(); cImg13.src = cName +   '0_on' + gif;
+var cImg14 = new Image(); cImg14.src = cName +   '1_on' + gif;
+var cImg15 = new Image(); cImg15.src = cName +   '2_on' + gif;
+var cImg16 = new Image(); cImg16.src = cName +   '3_on' + gif;
+var cImg17 = new Image(); cImg17.src = cName +   '4_on' + gif;
+var cImg18 = new Image(); cImg18.src = cName +   '5_on' + gif;
+var cImg19 = new Image(); cImg19.src = cName +   '6_on' + gif;
+var cImg20 = new Image(); cImg20.src = cName +   '7_on' + gif;
+var cImg21 = new Image(); cImg21.src = cName +   '8_on' + gif;
+var cImg22 = new Image(); cImg22.src = cName +   '9_on' + gif;
+var cImg23 = new Image(); cImg23.src = cName +  '10_on' + gif;
+var cImg24 = new Image();
+
+var drawingState = true, clearingState = true, loadingState = true;
+
+var aImg1 = new Image(); aImg1.src = aName + 'Drawing' + gif;
+var aImg2 = new Image(); aImg2.src = aName + 'Clearing' + gif;
+var aImg3 = new Image(); aImg3.src = aName + 'Loading' + gif;
+var aImg4 = new Image(); aImg4.src = aName + 'Drawing' + on + gif;
+var aImg5 = new Image(); aImg5.src = aName + 'Clearing' + on + gif;
+var aImg6 = new Image(); aImg6.src = aName + 'Loading' + on + gif;
+
+var constThicknessState = false, gridlinesState = false;
+
+var tempwin;function print_via_png()
+{
+ tempwin = window.open('', 'tempwin', 'scrollbars=no,width=400,height=190');
+tempwin.document.writeln('<html><head><link rel=STYLESHEET href=/style.css type=text/css><body><p>Generating png print file, please wait...</p><p><b>NOTE:</b> ensure that your popup blocker is switched off.<p><b>NOTE2:</b> if only a partial image appears, please refresh the printout.png page before printing.</p><p><b>NOTE3:</b> you may need to adjust the Page Setup in the printer dialog if the full image does not print.</p></body></html>');
+ gb.save_as('printout.png');
+setTimeout('timeout_func()', 4000);
+ }
+function timeout_func()
+{
+ var today = new Date();
+ var sec = today.getSeconds();
+ var min = today.getMinutes();
+ var hour = today.getHours();
+ var i = "http://www.groupboard.com/java_v3/data/113/577/backgrounds/printout.png?"+hour.valueOf()+""+min.valueOf()+""+sec.valueOf();
+ tempwin.close();
+ var w = window.open(i);
+ w.print();
+ }
+function eraser()
+{
+// store current size and colour so we can get them back
+if (using_eraser)
+{ return; }
+using_eraser = true;
+prev_tool = cur_tool;
+prev_colour = cur_colour;
+prev_size = cur_size;
+var d = document;
+gb.set_tool(4); // freehand
+d.tool_71.src = tName + '71' + on + gif;
+setCurrColour(0);  // white
+setCurrSize(10);
+
+// switch off current icon
+d.tool_0.src  = tName +  '0' + gif;
+d.tool_1.src  = tName +  '1' + gif;
+d.tool_2.src  = tName +  '2' + gif;
+d.tool_3.src  = tName +  '3' + gif;
+d.tool_4.src  = tName +  '4' + gif;
+d.tool_11.src = tName + '11' + gif;
+d.tool_12.src = tName + '12' + gif;
+d.tool_13.src = tName + '13' + gif;
+d.tool_49.src = tName + '49' + gif;
+d.tool_53.src = tName + '53' + gif;
+d.tool_55.src = tName + '55' + gif;
+d.tool_61.src = tName + '61' + gif;
+d.tool_64.src = tName + '64' + gif;
+d.tool_67.src = tName + '67' + gif;
+d.tool_68.src = tName + '68' + gif;
+d.tool_69.src = tName + '69' + gif;
+}
+function clearTool(){var d = document;d.tool_0.src  = tName +  '0' + gif;d.tool_1.src  = tName +  '1' + gif;d.tool_2.src  = tName +  '2' + gif;d.tool_3.src  = tName +  '3' + gif;d.tool_4.src  = tName +  '4' + gif;d.tool_11.src = tName + '11' + gif;d.tool_12.src = tName + '12' + gif;d.tool_13.src = tName + '13' + gif;d.tool_49.src = tName + '49' + gif;d.tool_53.src = tName + '53' + gif;d.tool_55.src = tName + '55' + gif;d.tool_61.src = tName + '61' + gif;d.tool_64.src = tName + '64' + gif;d.tool_67.src = tName + '67' + gif;d.tool_68.src = tName + '68' + gif;d.tool_69.src = tName + '69' + gif;d.tool_71.src = tName + '71' + gif;}var warning_given = false;
+function setCurrTool( tool )
+{
+ var d = document;
+if (prev_element != null) prev_element.border = 0; gb.set_tool( tool );
+
+ if (tool == 64 && (!warning_given)) { alert('Please note that the flood fill may produce unexpected results if the pan/zoom/scroll functions are used'); warning_given = true; }using_eraser = false;
+cur_tool = tool;
+if (prev_tool != -1)
+{
+// Restore previous colour and size
+prev_tool = -1;
+setCurrSize(prev_size);
+setCurrColour(prev_colour);
+}
+ var t0 = '', t1 = '', t2 = '', t3 = '', t4 = '', t11 = '', t12 = '', t13 = '', t49 = '', t53 = '', t55 = '', t61 = '', t64 = '', t67 = '', t68 = '', t69 = '', t71 = '';
+
+ switch( tool )
+ {
+   case  0:  t0 = on; break;
+   case  1:  t1 = on; break;
+   case  2:  t2 = on; break;
+   case  3:  t3 = on; break;
+   case  4:  t4 = on; break;
+   case 11: t11 = on; break;
+   case 12: t12 = on; break;
+   case 13: t13 = on; break;
+   case 49: t49 = on; break;
+   case 53: t53 = on; break;
+   case 55: t55 = on; break;
+   case 61: t61 = on; break;
+   case 64: t64 = on; break;
+   case 67: t67 = on; break;
+   case 68: t68 = on; break;
+   case 69: t69 = on; break;
+   case 71: t71 = on; break;
+ }
+
+ d.tool_0.src  = tName +  '0' +  t0 + gif;
+ d.tool_1.src  = tName +  '1' +  t1 + gif;
+ d.tool_2.src  = tName +  '2' +  t2 + gif;
+ d.tool_3.src  = tName +  '3' +  t3 + gif;
+ d.tool_4.src  = tName +  '4' +  t4 + gif;
+ d.tool_11.src = tName + '11' + t11 + gif;
+ d.tool_12.src = tName + '12' + t12 + gif;
+ d.tool_13.src = tName + '13' + t13 + gif;
+ d.tool_49.src = tName + '49' + t49 + gif;
+ d.tool_53.src = tName + '53' + t53 + gif;
+ d.tool_55.src = tName + '55' + t55 + gif;
+ d.tool_61.src = tName + '61' + t61 + gif;
+ d.tool_64.src = tName + '64' + t64 + gif;
+ d.tool_67.src = tName + '67' + t67 + gif;
+ d.tool_68.src = tName + '68' + t68 + gif;
+ d.tool_69.src = tName + '69' + t69 + gif;
+ d.tool_71.src = tName + '71' + t71 + gif;
+}
+
+function setCurrSize( size )
+{
+ var d = document;
+ gb.set_thickness( size );
+
+ cur_size = size;
+ var s1 = '', s2 = '', s3 = '', s4 = '',  s5 = '';
+ var s6 = '', s7 = '', s8 = '', s9 = '', s10 = '';
+
+ switch( size )
+ {
+  case 1:   s1 = on; break;
+  case 2:   s2 = on; break;
+  case 3:   s3 = on; break;
+  case 4:   s4 = on; break;
+  case 5:   s5 = on; break;
+  case 6:   s6 = on; break;
+  case 7:   s7 = on; break;
+  case 8:   s8 = on; break;
+  case 9:   s9 = on; break;
+  case 10: s10 = on; break;
+ }
+
+ d.size_1.src  = sName +  '1' +  s1 + gif;
+ d.size_2.src  = sName +  '2' +  s2 + gif;
+ d.size_3.src  = sName +  '3' +  s3 + gif;
+ d.size_4.src  = sName +  '4' +  s4 + gif;
+ d.size_5.src  = sName +  '5' +  s5 + gif;
+ d.size_6.src  = sName +  '6' +  s6 + gif;
+ d.size_7.src  = sName +  '7' +  s7 + gif;
+ d.size_8.src  = sName +  '8' +  s8 + gif;
+ d.size_9.src  = sName +  '9' +  s9 + gif;
+ d.size_10.src = sName + '10' + s10 + gif;
+}
+
+function setCurrColour( colour )
+{
+ var d = document;
+ gb.set_colour( colour );
+
+cur_colour = colour;
+ var c0 = '', c1 = '', c2 = '', c3 = '',  c4 = '',   c5 = '';
+ var c6 = '', c7 = '', c8 = '', c9 = '', c10 = '';
+
+ switch(colour)
+ {
+  case   0:   c0 = on; break;
+  case   1:   c1 = on; break;
+  case   2:   c2 = on; break;
+  case   3:   c3 = on; break;
+  case   4:   c4 = on; break;
+  case   5:   c5 = on; break;
+  case   6:   c6 = on; break;
+  case   7:   c7 = on; break;
+  case   8:   c8 = on; break;
+  case   9:   c9 = on; break;
+  case  10:  c10 = on; break;
+ }
+
+ d.colour_0.src   = cName +   '0' +   c0 + gif;
+ d.colour_1.src   = cName +   '1' +   c1 + gif;
+ d.colour_2.src   = cName +   '2' +   c2 + gif;
+ d.colour_3.src   = cName +   '3' +   c3 + gif;
+ d.colour_4.src   = cName +   '4' +   c4 + gif;
+ d.colour_5.src   = cName +   '5' +   c5 + gif;
+ d.colour_6.src   = cName +   '6' +   c6 + gif;
+ d.colour_7.src   = cName +   '7' +   c7 + gif;
+ d.colour_8.src   = cName +   '8' +   c8 + gif;
+ d.colour_9.src   = cName +   '9' +   c9 + gif;
+ d.colour_10.src  = cName +  '10' +  c10 + gif;
+}
+
+function show_help()
+{
+window.open( 'http://www.groupboard.com/designer_manual_3dlook/index_admin.html', 'user', 'scrollbars=yes' );
+}
+
+function doClearButton()
+{
+ var reply = confirm( 'Are you sure you wish to clear?' );
+ if( reply )
+ {
+  gb.clear();
+ }
+}
+
+function setConstThickness()
+{
+ var newSrc = 'http://www.groupboard.com/Icons.3dlook/const_thickness';
+
+ if( !constThicknessState ) newSrc += on;
+
+ document.constThickness.src = newSrc + gif;
+ constThicknessState = !constThicknessState;
+ gb.set_const_thickness( constThicknessState );
+}
+
+function setGridlines()
+{
+ var newSrc = 'http://www.groupboard.com/Icons.3dlook/gridlines';
+
+ if( !gridlinesState ) newSrc += on;
+ document.gridlines.src = newSrc + gif;
+ gridlinesState = !gridlinesState;
+ gb.set_gridlines( gridlinesState );
+}
+
+function allowDrawing()
+{
+ var newSrc = aName + 'drawing';
+
+ if( !drawingState ) newSrc += on;
+
+ document.allowDrawing.src = newSrc + gif;
+ drawingState = !drawingState;
+ gb.set_allow_drawing( drawingState );
+}
+
+function allowClearing()
+{
+ var newSrc = aName + 'clearing';
+
+ if( !clearingState ) newSrc += on;
+
+ document.allowClearing.src = newSrc + gif;
+ clearingState = !clearingState;
+ gb.set_allow_clearing( clearingState );
+}
+
+function allowLoading()
+{
+ var newSrc = aName + 'loading';
+
+ if( !loadingState ) newSrc += on;
+
+ document.allowLoading.src = newSrc + gif;
+ loadingState = !loadingState;
+ gb.set_allow_loading( loadingState );
+}
+
+function doOpenSmall(url)
+{
+ var w = window.open(url,"LinksSmall","scrollbars=yes,width=500,height=370");
+ w.focus();
+}
+
+function doOpen(url)
+{
+ var w = window.open(url,'Links','scrollbars=yes');
+ w.focus();
+}
+
+// -->
+  </SCRIPT>
+ </HEAD>
+ <BODY  onLoad="finishedLoading();" TEXT="#000000" BGCOLOR="#ffffff" LINK="#ff0000" VLINK="#000000" ALINK="#000000">
+  <CENTER>
+   <TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH="100%"><TBODY>
+    <TR><TD HEIGHT=0><SPACER TYPE=BLOCK HEIGHT=0></TD></TR>
+    <TR ALIGN=center><TD>
+     <TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0><TBODY><TR>
+      <TD><IMG SRC="http://www.groupboard.com/Tabs/Multi-user_Red_1.gif" ALT="Multi-user" WIDTH=68 HEIGHT=18 BORDER=0></TD>
+      <TD><A HREF="http://www.groupboard.com/mp/ds.cgi?board_id=113577&admin=true&singleuser=true"><IMG SRC="http://www.groupboard.com/Tabs/Single-user_Red_0.gif" ALT="Single-user" WIDTH=76 HEIGHT=18 BORDER=0></A></TD>
+      <TD><A HREF="http://www.groupboard.com/mp/ds.cgi?board_id=113577&admin=true&singleuser=true"><IMG SRC="http://www.groupboard.com/Tabs/end_tab.gif" ALT="Single-user" WIDTH=1 HEIGHT=18 BORDER=0></A></TD>
+      <TD WIDTH=40><SPACER TYPE=BLOCK WIDTH=40 HEIGHT=1></TD>
+      <TD><A HREF="http://www.groupboard.com/mp/designer_gallery.cgi?designer=ds.cgi&board_id=113577&admin=true"><IMG SRC="http://www.groupboard.com/Tabs/Gallery_Red_0.gif" ALT="Gallery" WIDTH=52 HEIGHT=18 BORDER=0></A></TD>
+      <TD><A HREF="http://www.groupboard.com/mp/designer_gallery.cgi?designer=ds.cgi&board_id=113577&admin=true"><IMG SRC="http://www.groupboard.com/Tabs/end_tab.gif" ALT="Gallery" WIDTH=1 HEIGHT=18 BORDER=0></A></TD>
+<TD>&nbsp;&nbsp;</td><td><div style="height: 18px; overflow:hidden"><form style="margin:0" action="http://www.groupboard.com/mp/ds.cgi"><input type=hidden name=iframe value=false><input type=hidden name=admin value=true><input type=hidden name=ajax value=false><input type=hidden name=embedded_chat value=false><input type=hidden name=allow_nonadmin_upload value=true><input type=hidden name=groupconf value=true><input type=hidden name=groupconf_id value=113577><input type=hidden name=scrollbars value=true><input type=hidden name=icon_scale value=><input type=hidden name=scale_to_fit value=false><input type=hidden name=centre_in_window value=true><input type=hidden name=multi_page value=true><input type=hidden name=board_id value=113577><select name=size onchange="javascript:submit();"><option selected value=small>1024x768</option><option  value=large>1280x1024</option><option  value=verylarge>1920x1200</option></select></form></div></td>     </TR></TBODY></TABLE>
+    </TD></TR>
+    <TR ALIGN=center><TD WIDTH="100%" BGCOLOR="#c00000"
+>     <TABLE CELLPADDING=0 CELLSPACING=6 BORDER=0><TBODY><TR>
+      <TD BGCOLOR="#ffffff" WIDTH=2><SPACER TYPE=BLOCK WIDTH=2></TD>
+      <TD ALIGN=center><A HREF="javascript:doOpen('http://www.groupboard.com/designer_manual_3dlook/index_admin.html')" onMouseOver="window.status='User Guide';return true;"><FONT COLOR="#ffffff"><B><font size=-1>User Guide</font></B></FONT></A></TD>
+      <TD BGCOLOR="#ffffff" WIDTH=2><SPACER TYPE=BLOCK WIDTH=2></TD>
+      <TD ALIGN=center><A HREF="javascript:doOpen('http://www.groupboard.com/designer_manual_3dlook/admin_guide.html')" onMouseOver="window.status='Admin Guide';return true;"><FONT COLOR="#ffffff"><B><font size=-1>Admin Guide</font></B></FONT></A></TD>
+      <TD BGCOLOR="#ffffff" WIDTH=2><SPACER TYPE=BLOCK WIDTH=2></TD>
+     </TR></TBODY></TABLE>
+    </TD></TR>
+   </TBODY></TABLE>
+<div align=left>
+<h2>Voice Conferencing</h2>
+<p>Enter a name below and click the Launch button to use voice conferencing (NOTE: only works on Windows).</p>
+<form name=form1 action="javascript:start()">
+<table><tr><td>
+<p>Your Name:</p>
+</td><td><input name=username value='' size=20></td></tr>
+</table><input name=submit disabled type=submit value="Please Wait..."></form>
+<a href="javascript:show_groupconf_help()">Click here for voice conferencing help</a>
+<script language=javascript>
+var agt=navigator.userAgent.toLowerCase();
+var is_nav  = (agt.indexOf('mozilla') != -1);
+var is_ie = (agt.indexOf('msie') != -1);
+var d = document;
+if (is_ie)
+{
+d.writeln('<br><a target=_blank href=http://www.groupboard.com/groupconf/groupconf_dll.exe>Click here to install the required activex control if it does not install automatically.</a><br>');
+}
+else if (is_nav)
+{
+d.writeln('<br><a target=_blank href=http://www.groupboard.com/groupconf/plugin.html>Click here to install the required plugin if it does not install automatically.</a>');
+}
+</script>
+<script language=javascript>
+groupconf_object();
+// The next line is redundant, but Netscape has a bug which causes
+// the error "the plugin performed an illegal operation" if you have
+// a scriptable plugin and you reload the page without calling any
+// of the scriptable functions, unless you have the following line.
+var embed = document.embeds[0];
+</script>
+</div>
+<hr>
+<script language=javascript>var prev_element = null;</script>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!-- 
+ var d=document;
+
+ d.writeln('<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2><TR>');
+ d.writeln('<TD ROWSPAN=2>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:allowDrawing()" onMouseOver="window.status=\'Allow Drawing\';return true;"><IMG NAME="allowDrawing" SRC="http://www.groupboard.com/Icons.3dlook/allow_drawing_on.gif" ALT="Allow Drawing" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:allowClearing()" onMouseOver="window.status=\'Allow Clearing\';return true;"><IMG NAME="allowClearing" SRC="http://www.groupboard.com/Icons.3dlook/allow_clearing_on.gif" ALT="Allow Clearing" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:allowLoading()" onMouseOver="window.status=\'Allow Loading\';return true;"><IMG NAME="allowLoading" SRC="http://www.groupboard.com/Icons.3dlook/allow_loading_on.gif" ALT="Allow Loading" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE>');
+ d.writeln('<BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.show_drawing_log()" onMouseOver="window.status=\'Drawing Log\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/drawing_log.gif" TITLE="Drawing Log" ALT="Drawing Log" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.show_banlist()" onMouseOver="window.status=\'Ban List\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/ban_list.gif" TITLE="Ban List" ALT="Ban List" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.show_board_info()" onMouseOver="window.status=\'Board Info\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/board_info.gif" TITLE="Board Info" ALT="Board Info" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE>');
+ d.writeln('<BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center>');
+ d.writeln('<TR>');
+ d.writeln('<TD><A HREF="javascript:gb.show_chat()" onMouseOver="window.status=\'Chat\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/chat.gif" TITLE="Chat" ALT="Chat" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR>');
+ d.writeln('<TR>');
+ d.writeln('<TD><A HREF="javascript:gb.show_message_board()" onMouseOver="window.status=\'Message Board\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/messages.gif" TITLE="Message Board" ALT="Message Board" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR>');
+ d.writeln('</TABLE>');
+ d.writeln('<BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center>');
+ d.writeln('<TR><TD><A HREF="javascript:setConstThickness()" onMouseOver="window.status=\'Constant thickness\';return true;"><IMG NAME="constThickness" SRC="http://www.groupboard.com/Icons.3dlook/const_thickness.gif" ALT="Constant thickness" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ d.writeln('<TR><TD><A HREF="javascript:setGridlines()" onMouseOver="window.status=\'Gridlines\';return true;"><IMG NAME="gridlines" SRC="http://www.groupboard.com/Icons.3dlook/gridlines.gif" ALT="Gridlines" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ d.writeln('</TABLE>');
+ d.writeln('<BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.set_background()" onMouseOver="window.status=\'Set Background\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/set_background.gif" TITLE="Set Background" ALT="Set Background" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:doOpenSmall(\'http://www.groupboard.com/mp/fileupload.cgi?is_designer=true&is_popup=true&board_id=113577&hide_password=true\')" onMouseOver="window.status=\'Upload Background\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/upload_background.gif" ALT="Upload Background" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:doOpenSmall(\'http://www.groupboard.com/mp/dxffileupload.cgi?is_designer=true&is_popup=true&board_id=113577&hide_password=true\')" onMouseOver="window.status=\'Upload DXF\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/upload_dxf.gif" ALT="Upload DXF" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE>');
+ d.writeln('<BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:doClearButton()" onMouseOver="window.status=\'Clear\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/clear.gif" ALT="Clear" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.save()" onMouseOver="window.status=\'Save\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/save.gif" TITLE="Save" ALT="Save" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.load()" onMouseOver="window.status=\'Load\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/load.gif" TITLE="Load" ALT="Load" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:print_via_png()" onMouseOver="window.status=\'Print\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/print.gif" ALT="Print" WIDTH=75 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE>');
+ d.writeln('<BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center>');
+ d.writeln('<TR><TD><A HREF="javascript:show_help()" onMouseOver="window.status=\'Help\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/help.gif" ALT="Help" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ d.writeln('</TABLE>');
+ d.writeln('</TD>');
+ d.writeln('<TD ALIGN=center>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff"><TR ALIGN=center><TD BGCOLOR="#d2d2d2">');
+ d.writeln('<APPLET NAME=gb WIDTH=840 HEIGHT=530 CODEBASE="http://www.groupboard.com/java_v3" ARCHIVE="groupboard.jar" CODE="groupboard.class">');
+ d.writeln('<PARAM NAME=board_id VALUE=113577>');
+ d.writeln('<PARAM name=java_arguments value="-Xmx256m">');
+ d.writeln('<PARAM NAME=default_thickness VALUE=1>');
+ d.writeln('<PARAM NAME=default_tool VALUE=4>');
+ d.writeln('<PARAM NAME=default_colour VALUE=6>');
+ d.writeln('<PARAM NAME=server_address VALUE=www.groupboard.com>');
+ d.writeln('<PARAM NAME=board_width VALUE=810>');
+ d.writeln('<PARAM NAME=board_height VALUE=470>');
+ d.writeln('<PARAM NAME=use_lossy_compression VALUE=false>');
+ d.writeln('<PARAM NAME=scale_to_fit VALUE=false>');
+ d.writeln('<PARAM NAME=multi_page VALUE=true>');
+ d.writeln('<PARAM NAME=centre_in_window VALUE=true>');
+ d.writeln('<PARAM NAME=background_red VALUE=210>');
+ d.writeln('<PARAM NAME=background_green VALUE=210>');
+ d.writeln('<PARAM NAME=background_blue VALUE=210>');
+ d.writeln('<PARAM NAME=hide_gui VALUE=true>');
+ d.writeln('<PARAM NAME=use_utf VALUE=false>');
+ d.writeln('<PARAM NAME=use_scrollbars VALUE=true>');
+ d.writeln('<PARAM NAME=use_compression VALUE=true>');
+ d.writeln('<PARAM NAME=display_title VALUE=false>');
+ d.writeln('<PARAM NAME=allow_set_background VALUE=true>');
+ d.writeln('<PARAM NAME=allow_load VALUE=true>');
+ d.writeln('<PARAM NAME=show_ip_addresses VALUE=true>');
+ d.writeln('<PARAM NAME=hide_chat VALUE=true>');
+ d.writeln('<PARAM NAME=use_tunnel VALUE=false>');
+ d.writeln('<PARAM NAME=extended_palette VALUE=true>');
+ d.writeln('<PARAM NAME=tunnel_port VALUE=80>');
+ d.writeln('<PARAM NAME=always_float VALUE=false>');
+ d.writeln('<PARAM NAME=multi_user VALUE=true>');
+ d.writeln('<PARAM NAME=multi_user_pan VALUE=true>');
+ d.writeln('<PARAM NAME=display_drawing_user VALUE=true>');
+ d.writeln('<PARAM NAME=need_password VALUE=true>');
+ d.writeln('<H1>ERROR: you do not have java. You must either <a href="http://java.sun.com/getjava">install java</a> or use the <a href="http://www.groupboard.com/mp/ds.cgi?ajax=true&board_id=113577&admin=true">non-java version of Groupboard</a></H1>');
+ d.writeln('</APPLET>');
+ d.writeln('</TD></TR></TABLE>');
+var gb = document.gb;
+ d.writeln('</TD>');
+ d.writeln('<TD ROWSPAN=2>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(1)" onMouseOver="window.status=\'Size 1\';return true;"><IMG NAME="size_1" SRC="http://www.groupboard.com/Icons.3dlook/size_1_on.gif" TITLE="Size 1" ALT="Size 1" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(4)" onMouseOver="window.status=\'Freehand\';return true;"><IMG NAME="tool_4" SRC="http://www.groupboard.com/Icons.3dlook/tool_4_on.gif" TITLE="Freehand" ALT="Freehand" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(2)" onMouseOver="window.status=\'Size 2\';return true;"><IMG NAME="size_2" SRC="http://www.groupboard.com/Icons.3dlook/size_2.gif" TITLE="Size 2" ALT="Size 2" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(1)" onMouseOver="window.status=\'Line\';return true;"><IMG NAME="tool_1" SRC="http://www.groupboard.com/Icons.3dlook/tool_1.gif" TITLE="Line" ALT="Line" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(3)" onMouseOver="window.status=\'Size 3\';return true;"><IMG NAME="size_3" SRC="http://www.groupboard.com/Icons.3dlook/size_3.gif" TITLE="Size 3" ALT="Size 3" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(2)" onMouseOver="window.status=\'Oval\';return true;"><IMG NAME="tool_2" SRC="http://www.groupboard.com/Icons.3dlook/tool_2.gif" TITLE="Oval" ALT="Oval" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(4)" onMouseOver="window.status=\'Size 4\';return true;"><IMG NAME="size_4" SRC="http://www.groupboard.com/Icons.3dlook/size_4.gif" TITLE="Size 4" ALT="Size 4" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(11)" onMouseOver="window.status=\'Rectangle\';return true;"><IMG NAME="tool_11" SRC="http://www.groupboard.com/Icons.3dlook/tool_11.gif" TITLE="Rectangle" ALT="Rectangle" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(5)" onMouseOver="window.status=\'Size 5\';return true;"><IMG NAME="size_5" SRC="http://www.groupboard.com/Icons.3dlook/size_5.gif" TITLE="Size 5" ALT="Size 5" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(67)" onMouseOver="window.status=\'Polygon\';return true;"><IMG NAME="tool_67" SRC="http://www.groupboard.com/Icons.3dlook/tool_67.gif" TITLE="Polygon" ALT="Polygon" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(6)" onMouseOver="window.status=\'Size 6\';return true;"><IMG NAME="size_6" SRC="http://www.groupboard.com/Icons.3dlook/size_6.gif" TITLE="Size 6" ALT="Size 6" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(12)" onMouseOver="window.status=\'Filled oval\';return true;"><IMG NAME="tool_12" SRC="http://www.groupboard.com/Icons.3dlook/tool_12.gif" TITLE="Filled oval" ALT="Filled oval" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(7)" onMouseOver="window.status=\'Size 7\';return true;"><IMG NAME="size_7" SRC="http://www.groupboard.com/Icons.3dlook/size_7.gif" TITLE="Size 7" ALT="Size 7" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(13)" onMouseOver="window.status=\'Filled rectangle\';return true;"><IMG NAME="tool_13" SRC="http://www.groupboard.com/Icons.3dlook/tool_13.gif" TITLE="Filled rectangle" ALT="Filled rectangle" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(8)" onMouseOver="window.status=\'Size 8\';return true;"><IMG NAME="size_8" SRC="http://www.groupboard.com/Icons.3dlook/size_8.gif" TITLE="Size 8" ALT="Size 8" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(68)" onMouseOver="window.status=\'Filled polygon\';return true;"><IMG NAME="tool_68" SRC="http://www.groupboard.com/Icons.3dlook/tool_68.gif" TITLE="Filled polygon" ALT="Filled polygon" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(9)" onMouseOver="window.status=\'Size 9\';return true;"><IMG NAME="size_9" SRC="http://www.groupboard.com/Icons.3dlook/size_9.gif" TITLE="Size 9" ALT="Size 9" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(69)" onMouseOver="window.status=\'Hatched polygon\';return true;"><IMG NAME="tool_69" SRC="http://www.groupboard.com/Icons.3dlook/tool_69.gif" TITLE="Hatched polygon" ALT="Hatched polygon" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrSize(10)" onMouseOver="window.status=\'Size 10\';return true;"><IMG NAME="size_10" SRC="http://www.groupboard.com/Icons.3dlook/size_10.gif" TITLE="Size 10" ALT="Size 10" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(3)" onMouseOver="window.status=\'Text (click on size icons at the left to change font-size)\';return true;"><IMG NAME="tool_3" SRC="http://www.groupboard.com/Icons.3dlook/tool_3.gif" TITLE="Text (click on size icons at the left to change font-size)" ALT="Text (click on size icons at the left to change font-size)" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(64)" onMouseOver="window.status=\'Flood Fill\';return true;"><IMG NAME="tool_64" SRC="http://www.groupboard.com/Icons.3dlook/tool_64.gif" TITLE="Flood Fill" ALT="Flood Fill" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+d.writeln('<TD><A HREF="javascript:eraser()" onMouseOver="window.status=\'Eraser\';return true;"><IMG NAME="tool_71" SRC="http://www.groupboard.com/Icons.3dlook/tool_71.gif" TITLE="Eraser" ALT="Eraser" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD COLSPAN=2><A HREF="javascript:setCurrTool(55)" onMouseOver="window.status=\'Place image\';return true;"><IMG NAME="tool_55" SRC="http://www.groupboard.com/Icons.3dlook/tool_55.gif" ALT="Place image" WIDTH=49 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD COLSPAN=2><A HREF="javascript:setCurrTool(61)" onMouseOver="window.status=\'Tool Library\';return true;"><IMG NAME="tool_61" SRC="http://www.groupboard.com/Icons.3dlook/tool_61.gif" ALT="Tool Library" WIDTH=49 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE>');
+ d.writeln('<BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.set_zoom(1.0)" onMouseOver="window.status=\'Zoom 100%\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/zoom_100.gif" TITLE="Zoom 100%" ALT="Zoom 100%" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(0)" onMouseOver="window.status=\'Select\';return true;"><IMG NAME="tool_0" SRC="http://www.groupboard.com/Icons.3dlook/tool_0.gif" TITLE="Select" ALT="Select" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.zoom_in()" onMouseOver="window.status=\'Zoom in\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/zoom_in.gif" TITLE="Zoom in" ALT="Zoom in" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(49)" onMouseOver="window.status=\'Pointer\';return true;"><IMG NAME="tool_49" SRC="http://www.groupboard.com/Icons.3dlook/tool_49.gif" TITLE="Pointer" ALT="Pointer" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.zoom_out()" onMouseOver="window.status=\'Zoom out\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/zoom_out.gif" TITLE="Zoom out" ALT="Zoom out" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrTool(53)" onMouseOver="window.status=\'Pan\';return true;"><IMG NAME="tool_53" SRC="http://www.groupboard.com/Icons.3dlook/tool_53.gif" TITLE="Pan" ALT="Pan" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE>');
+ d.writeln('<BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR><TD>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#ffffff"><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(0)" onMouseOver="window.status=\'White\';return true;"><IMG NAME="colour_0" SRC="http://www.groupboard.com/Icons.3dlook/colour_0.gif" TITLE="White" ALT="White" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(7)" onMouseOver="window.status=\'Grey\';return true;"><IMG NAME="colour_7" SRC="http://www.groupboard.com/Icons.3dlook/colour_7.gif" TITLE="Grey" ALT="Grey" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(6)" onMouseOver="window.status=\'Black\';return true;"><IMG NAME="colour_6" SRC="http://www.groupboard.com/Icons.3dlook/colour_6_on.gif" TITLE="Black" ALT="Black" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(1)" onMouseOver="window.status=\'Red\';return true;"><IMG NAME="colour_1" SRC="http://www.groupboard.com/Icons.3dlook/colour_1.gif" TITLE="Red" ALT="Red" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(9)" onMouseOver="window.status=\'Cyan\';return true;"><IMG NAME="colour_9" SRC="http://www.groupboard.com/Icons.3dlook/colour_9.gif" TITLE="Cyan" ALT="Cyan" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(4)" onMouseOver="window.status=\'Pink\';return true;"><IMG NAME="colour_4" SRC="http://www.groupboard.com/Icons.3dlook/colour_4.gif" TITLE="Pink" ALT="Pink" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(2)" onMouseOver="window.status=\'Green\';return true;"><IMG NAME="colour_2" SRC="http://www.groupboard.com/Icons.3dlook/colour_2.gif" TITLE="Green" ALT="Green" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(5)" onMouseOver="window.status=\'Orange\';return true;"><IMG NAME="colour_5" SRC="http://www.groupboard.com/Icons.3dlook/colour_5.gif" TITLE="Orange" ALT="Orange" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(10)" onMouseOver="window.status=\'Brown\';return true;"><IMG NAME="colour_10" SRC="http://www.groupboard.com/Icons.3dlook/colour_10.gif" TITLE="Brown" ALT="Brown" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('</TR><TR>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(3)" onMouseOver="window.status=\'Blue\';return true;"><IMG NAME="colour_3" SRC="http://www.groupboard.com/Icons.3dlook/colour_3.gif" TITLE="Blue" ALT="Blue" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:setCurrColour(8)" onMouseOver="window.status=\'Magenta\';return true;"><IMG NAME="colour_8" SRC="http://www.groupboard.com/Icons.3dlook/colour_8.gif" TITLE="Magenta" ALT="Magenta" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:gb.show_extended_palette()" onMouseOver="window.status=\'Colour Palette\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/tool_palette.gif" ALT="Colours" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE>');
+ d.writeln('</TD></TR></TABLE>');
+ d.writeln('</TD>');
+ d.writeln('</TR>');
+ <!-- Start of bottom buttons -->
+ d.writeln('<TR>');
+ d.writeln('<TD ALIGN=center>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff"><TR>');
+ d.writeln('<TD><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.undo()" onMouseOver="window.status=\'Undo/Redo\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/undo.gif" TITLE="Undo/Redo" ALT="Undo/Redo" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE></TD>');
+ d.writeln('<TD WIDTH=24 HEIGHT=24><SPACER TYPE=BLOCK WIDTH=24 HEIGHT=24></TD>');
+ d.writeln('<TD><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.cut()" onMouseOver="window.status=\'Cut\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/cut.gif" TITLE="Cut" ALT="Cut" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:gb.copy()" onMouseOver="window.status=\'Copy\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/copy.gif" TITLE="Copy" ALT="Copy" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:gb.paste()" onMouseOver="window.status=\'Paste\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/paste.gif" TITLE="Paste" ALT="Paste" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:gb.delete_items()" onMouseOver="window.status=\'Delete\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/delete.gif" TITLE="Delete" ALT="Delete" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE></TD>');
+ d.writeln('<TD WIDTH=24 HEIGHT=24><SPACER TYPE=BLOCK WIDTH=24 HEIGHT=24></TD>');
+ d.writeln('<TD><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ d.writeln('<TD><A HREF="javascript:gb.select_all()" onMouseOver="window.status=\'Select all\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/select_all.gif" TITLE="Select all" ALT="Select all" WIDTH=49 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('<TD><A HREF="javascript:gb.clear_selection()" onMouseOver="window.status=\'Select none\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/select_none.gif" TITLE="Select none" ALT="Select none" WIDTH=49 HEIGHT=24 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE></TD>');
+ d.writeln('</TR></TABLE>');
+ d.writeln('</TD>');
+ d.writeln('</TR>');
+ <!-- End of bottom buttons -->
+ d.writeln('</TABLE>');
+// -->
+</SCRIPT>
+   <NOSCRIPT><P CLASS=medium><B>&nbsp; You need JavaScript v1.2 or above to be enabled to view Groupboard Designer. If you can, please enable JavaScript for your browser.</B></P></NOSCRIPT><BR>
+   <P ALIGN=center>If you cannot connect to Groupboard Designer, perhaps due to a firewall, you should try the <B><A HREF="http://www.groupboard.com/mp/ds.cgi?board_id=113577&admin=true&use_tunnel=true">tunneling version</A></B> which can be slower but should work.</P>
+<br><br><center><p><hr width=200 size=1 align=center>Powered by <a href="http://www.groupboard.com" target=_top>Groupboard</a></center> </BODY>
+</HTML>

@@ -1,0 +1,266 @@
+/*Table*/
+.table {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-style: normal;
+	color: #000066;
+	background-color: #eeeeee;
+	
+}
+.table1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	color: #000066;
+	
+	background-color: white;
+	
+}
+.microsoftlayout
+{
+	border-left:1px solid #56628C;
+	border-right:1px solid #56628C;
+	border-bottom:1px solid #56628C;
+	
+}
+/*Table heading*/
+.txtheading {
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 8pt; 
+  color: #1B6BB8;
+; font-weight: bold
+  
+  }
+ .txtbox {  
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	background-color: #CCCCCC; 
+	border: #666666; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px
+}
+/*Button*/
+.button {  
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10pt; color: #000000; 
+	background-color: #B0B0B0;
+	border: #666666 1px solid;
+; cursor: hand
+}
+/*Side column*/
+
+.lighttd {
+background: #eeeeee
+url("images/line1.jpg") 
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 8pt; 
+
+
+}
+.lighttd2 {
+background: #eeeeee
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 8pt; 
+
+
+}
+/*First row of table[heading of the table]*/
+.headingtd {
+	background-color: #3366CC;
+	
+	valign:middle;
+ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold;
+ color: #ffffff;
+}
+/*Text box*/
+.textbox
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt;
+	border: #666666 solid 1px;
+}
+/*General Bodytext*/
+.bodytext
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #333333;
+
+}
+.msgval
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight:bold;
+	color: #05379A;
+
+}
+.error
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight:bold;
+	color: #FF0000;
+
+}
+
+
+/*white td*/
+.whittd
+{
+background: #eeeeee
+url("images/line.jpg") 
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 8pt; 
+}
+
+.whittd1
+{
+background: #eeeeee
+url("images/line_small.jpg") 
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: 7pt; 
+}
+
+.message {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; color: #666666}
+/*Scroll Effect*/
+.seffect
+{
+
+    
+    BACKGROUND-COLOR: #ffffff;
+    SCROLLBAR-FACE-COLOR: #ffffff;
+    SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+    SCROLLBAR-SHADOW-COLOR:#A4BECB;
+    SCROLLBAR-3DLIGHT-COLOR:#A4BECB;
+    SCROLLBAR-ARROW-COLOR: #A4BECB;
+    SCROLLBAR-TRACK-COLOR: #ffffff;
+    SCROLLBAR-DARKSHADOW-COLOR: #eeeeee
+
+}.mouse {  cursor: hand}
+.lable {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000; text-decoration: blink}
+/*Link*/
+a:link
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana;
+
+
+}
+a:active
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana;
+
+
+}
+a:visited
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana;
+
+
+}
+a:hover
+{
+    FONT-SIZE: 8pt;
+    COLOR: #666666;
+    FONT-FAMILY: Verdana;
+
+	
+}
+.question {  background-color: #F7F5FE}
+.tblBorderx
+{
+	BORDER-LEFT: #000000 1px solid;
+	color: #FFFFFF;
+
+}
+.tblBorderxy
+{
+    BORDER-LEFT: #000000 1px solid;    
+BORDER-TOP: #000000 1px solid;
+}
+.tblBordery
+{
+	BORDER-TOP: #000000 1px solid;
+	color: #CCCCCC;
+
+}
+.tablink:link
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000099;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: none
+}
+.tablink:active
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000099;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: none
+}
+.tablink:visited
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000099;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: none
+}
+.tablink:hover
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana;
+	TEXT-DECORATION: none
+	
+    
+}
+.activelink
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000099;
+	font-weight:bold;
+    FONT-FAMILY: Verdana;
+}
+
+.fliph {
+	FILTER: FlipH();
+}
+.flipv {
+	FILTER: FlipV();
+}
+.adminName {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; COLOR: #ffffff; PADDING-TOP: 0px
+}
+.note
+{
+	FONT-SIZE: 7pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana;
+	font-weight:normal;
+}
+
+
+
+.comment {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #3366CC}
+.optional {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 7pt; color: #6666FF}
+
+h3
+{
+
+    COLOR: #0A6CCE;
+    FONT-FAMILY: Verdana;
+	font-weight:normal;
+}
+.tblBorder
+{
+	BORDER-BOTTOM: #0A6CCE 1px solid;
+	BORDER-LEFT: #98C9FA 1px solid;
+	BORDER-RIGHT: #0A6CCE 1px solid;
+	BORDER-TOP: #98C9FA 1px solid;
+	/*color: #999999;*/
+
+}

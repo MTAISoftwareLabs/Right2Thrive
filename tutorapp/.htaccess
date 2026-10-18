@@ -1,0 +1,9 @@
+# Optional: default document when opening /tutorapp/ in the browser.
+DirectoryIndex user_login.php index.php
+
+# If your app lives in a subfolder (e.g. http://localhost/app21/tutorapp/),
+# uncomment and set RewriteBase to match:
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteBase /app21/tutorapp/
+# </IfModule>

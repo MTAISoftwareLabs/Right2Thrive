@@ -1,0 +1,222 @@
+<?php
+ob_start();
+session_start();
+include_once("dbConnection.php");
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="cufon-active cufon-ready" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Welcome to CareerPaths Online</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-1">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="Keywords" content="">
+<meta name="Description" content="Welcome to CareerPaths Online">
+<meta name="robots" content="index,follow">
+<link type="text/css" rel="stylesheet" media="screen" href="css/newstyle.css">
+<link rel="shortcut icon" href="" title="Favicon">
+<!--[if lt IE 8]>
+
+<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+
+<![endif]-->
+
+
+<script src="js/cufon-yui.js" type="text/javascript"></script>
+
+<style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style></style>
+
+<script src="js/Lacuna_Regular_400.js" type="text/javascript"></script>
+<script src="js/Aller_400.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+Cufon.replace('h1', { fontFamily: 'Lacuna Regular' });
+Cufon.replace('h2', { fontFamily: 'Aller' });
+Cufon.replace('h3', { fontFamily: 'Lacuna Regular' });
+</script>
+<script type="text/javascript" language="javascript">
+var regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var regExpName1 = /^[0-9 -]+$/;
+var url= /[A-Za-z0-9\.-]{3,}\.[A-Za-z]{3}/;
+var regexp = /^(\d{10}|\d{3}-\d{3}-\d{4}|\(\d{3}\)\d{3}-\d{4})$/;
+var regexp1 = /^(\d{8}|\d{2}-\d{2}-\d{4}|\(\d{2}\)\d{2}-\d{4})$/;
+function checklogin(){
+
+if(document.FRMLOGIN1.TXUSERID.value=="")
+{
+//alert("hi");
+alert("please enter email");
+document.FRMLOGIN1.TXUSERID.focus();
+return false;
+
+}
+if(document.FRMLOGIN1.TXUSERID.value=="")
+{
+//alert("hi");
+alert("please enter password");
+document.FRMLOGIN1.TXUSERID.focus();
+return false;
+
+}
+
+return true;
+}
+
+</script>
+<script type="text/javascript" language="javascript" src="js/loginvalid.js"></script>
+<!-- Start of Zopim Live Chat Script -->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=
+z.s=d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o
+){z.set._.push(o)};$.setAttribute('charset','utf-8');$.async=!0;z.set.
+_=[];$.src=('https:'==d.location.protocol?'https://ssl':'http://cdn')+
+'.zopim.com/?VCKd3OfLMyuzj6Qnh5CabrOKXlB7kHBd';$.type='text/java'+s;z.
+t=+new Date;z._=[];e.parentNode.insertBefore($,e)})(document,'script')
+</script>
+<!-- End of Zopim Live Chat Script -->
+
+<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34503062-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+
+</head>
+
+<body>
+
+<!-- Start Wrapper -->
+<div id="wrapper">
+
+<!-- Start Header -->
+<?php include "includes/header.php"; ?>
+<!-- End Header -->
+<div><p></p></div>
+<!--<div align="center">
+<img src="images/flash.jpg" width="912" height="188"/>
+</div>-->
+<!-- Start Featured -->
+<div id="featured">
+
+<div id="featured_left">
+
+</div>
+
+
+
+</div>
+<!-- End Featured -->
+
+<!-- Start Featured Sub -->
+<div id="featured_sub_wrapper">
+<table width="912" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td id="contentrightside" rowspan="3"><h4>Welcome to Career Paths Online</h4>
+<p>CareerPaths Online Employability Hub was created to leverage the huge influence that modern technology, internet services and social media platforms have on young people. Taking the focus of education from the classroom to the internet, we intend to guide young people, help them build their confidence, introduce them to various career options, and provide them with the vocational education, training and mentoring support that they need to fulfil their career ambitions.</p>
+<p>We want to empower people, to help them to better themselves, find work and contribute to their communities.</p>
+<p>We are working to tackle youth unemployment by providing an online platform for anyone, but especially young people, to find routes into work and further education, or to start up their own businesses.</p>
+<p>We are striving to deliver a vision of the future where individuals can access personalised education and vocational training via the internet and face-to-face that will lead to greater levels of employability.</p>
+<p>Using the CareerPaths Online learning platform, individuals can access course materials to study at their own pace and improve their level of confidence; they also have access to a mentor to help them to complete their course. To enhance the online learning experience, there are live lessons in our virtual classroom, where students can interact with their tutors and their peers.</p>
+<p>CareerPaths Online was developed to enable individuals to manage their own learning environment; to receive tailored education, vocational training and career development support; and to have their learning needs met, whilst receiving one-to-one learning support.</p>
+</td>
+
+<td valign="top" align="right" style="padding-left:12px;height:120px;"><div style="background:url(images/loginbg.gif); width:294px; height:100px">
+<form action="user_login.php" method="post" name="FRMLOGIN1" id="FRMLOGIN1" onsubmit="return checklogin();">
+<table width="285" border="0" align="center" cellpadding="0" cellspacing="1">
+<tr>
+<td height="2" colspan="2" class="logintext"></td>
+</tr>
+<tr>
+<td width="78" height="28" class="logintext">USER ID </td>
+<td width="204"><label>
+<input name="TXUSERID" id="TXUSERID" type="text" size="30" />
+</label></td>
+</tr>
+<tr>
+<td height="28" class="logintext">PASSWORD</td>
+<td><label>
+<input name="TXPASSWORD" id="TXPASSWORD" type="password" size="30" />
+</label></td>
+</tr>
+<tr>
+<td height="33" align="left" valign="top"><input name="submit" type="image" src="images/loginbutton.gif" /></td>
+<td class="logintextfgt"><a href="forgotpwd.php">FORGOT PASSWORD?</a> <bR />
+NEW MEMBER? <a href="register.php">REGISTER HERE </a></td>
+</tr>
+</table>
+</form>
+</div></td>
+</tr>
+
+<tr>
+
+
+<td style="height:120px;" valign="top" align="right"><div><a href="jobsearch.php"><img src="images/sub6.gif" alt="" id="Sub3" width="294" height="100"></a></div></td>
+</tr>
+
+<tr>
+
+
+<td valign="top" align="right"><div><a href="cvupload.php"><img src="images/sub9.gif" alt="" id="Sub3" width="294" height="100"></a></div></td>
+</tr>
+
+</tbody></table>
+</div>
+<!-- End Featured Sub -->
+
+<!-- Start Content Rounded Corners Top -->
+<div id="content_rt"></div>
+<!-- End Content Rounded Corners Top -->
+
+<!-- Start Content -->
+<div id="content">
+
+<!-- Start Content Left -->
+<div id="content_left" class="content">
+<div>
+<!--<div class="content_left_h"><h3><cufon style="width: 112px; height: 22px; color:#000000" alt="Career Profile of The Month " class="cufon cufon-canvas"><canvas style="width: 138px; height: 29px; top: -4px; left: 0px;" height="29" width="138"></canvas>
+<cufontext>Career Profile of The Month </cufontext></cufon></h3></div>
+<p></p><iframe width="520" height="326" src="http://www.youtube.com/embed/_EZ7HAVabgs?rel=0" frameborder="0" allowfullscreen></iframe>-->
+<a style="text-decoration: none; "href="http://www.careerpathsonline.net/conference/"><h4>Improving Access to Apprenticeships for Black and Minority Ethnic Young People Conference Date: 7th April 2014</h4></a>
+<a href="http://www.careerpathsonline.net/conference/"><img style="width: 550px;height: 395px;" src="http://jasminescholars.org.uk/wp-content/uploads/2013/10/banner1.jpg"></img></a>
+<div class="content_left_h"><h3><cufon style="width: 80px; height: 22px;" alt="FOLLOW US " class="cufon cufon-canvas"><canvas style="width: 106px; height: 29px; top: -4px; left: 0px;" height="29" width="106"></canvas>
+<cufontext>FOLLOW US </cufontext></cufon></h3></div>
+<p><strong>Follow us on facebook</strong>
+<a href="http://www.facebook.com/pages/CareerPaths-Online/112757125402937?v=wall" target="_blank"> <img src="images/facebook.png" alt="Facebook" width="64" height="64" align="absmiddle" border="0" /></a></p>
+</div>
+</div>
+<!-- End Content Left -->
+
+<!-- Start Content Right -->
+<?php include "includes/rightpanel.php"; ?>
+<!-- End Content Right -->
+
+<br style="clear: both;">
+</div>
+<!-- End Content -->
+
+<!-- Start Content Rounded Corners Bottom -->
+<div id="content_rb"></div>
+<!-- End Content Rounded Corners Bottom -->
+
+<!-- Start Footer -->
+<?php include "includes/footer.php"; ?>
+<!-- End Footer -->
+
+</div>
+<!-- End Wrapper -->
+
+<script type="text/javascript"> Cufon.now(); </script>
+<div style="display: none;" id="lbOverlay"></div><div style="display: none;" id="lbCenter"><div id="lbImage"><div style="position: relative;"><a id="lbPrevLink" href="#"></a><a id="lbNextLink" href="#"></a></div></div></div><div style="display: none;" id="lbBottomContainer"><div id="lbBottom"><a id="lbCloseLink" href="#"></a><div id="lbCaption"></div><div id="lbNumber"></div><div style="clear: both;"></div></div></div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<?php
+include_once 'dbConnection.php';
+
+	$sql="SELECT * FROM cpo_newsmaster where iNewsID=".$_GET['id'];
+    $rID=runquery1($sql);
+	if(isset($rID))
+	{
+		$rs = mysqli_fetch_row($rID);
+	}
+?>
+<style>
+.bothfeatured3
+{
+	border-left:1px solid #88B4F9;
+	border-right:1px solid #88B4F9;	
+}
+.flipv {
+	FILTER: FlipV();
+}
+</style>
+<link href="css/adminstyle.css" rel="stylesheet" type="text/css">
+<title>News - Careerpaths Online</title>
+<body topmargin="0">
+<table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+  
+  <tr> 
+    <td colspan="4"><img src="images/whiteimage.jpg" width="6" height="5"></td>
+  </tr>
+  <tr> 
+    <td background="images/coupons3.jpg" class="flipv"><img src="images/coupons2.jpg" width="5" height="5"></td>
+    <td colspan="2" background="images/coupons3.jpg" class="flipv"><img src="images/coupons3.jpg" width="5" height="5"></td>
+    <td background="images/coupons3.jpg" class="flipv"><div align="right"><img src="images/coupons4.jpg" width="5" height="5"></div></td>
+  </tr>
+  <tr> 
+    <td colspan="4" class="bothfeatured3"><table width="100%" border="0" cellspacing="1" cellpadding="4">
+        
+		<tr><td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table">
+              <tr> 
+                <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="3"><img src="images/round_corner.gif" width="3" height="20"></td>
+                      <td width="417" class="headingtd" nowrap="nowrap"><?php echo $rs[1]?> &nbsp;&nbsp;&nbsp;&nbsp;Date: 
+      <?php $d=explode("-",$rs[3]);
+	  echo $d[2]."/".$d[1]."/".$d[0]; ?> </td>
+                      <td width="246" class="headingtd"><div align="right"><img height=20 src="images/img_header_gradient.jpg" width=147></div></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="2%">&nbsp;</td>
+              </tr>
+			  <tr> 
+          <td width="15%" valign="top" class="bodytext"><img src="upload/<?phpecho $rs[0];?>.jpg"></td>
+          <td width="85%" valign="top" class="bodytext"><?php echo $rs[2];?></td>
+        </tr>
+			  
+			   <tr> 
+                <td colspan="2" height="2%">&nbsp;</td>
+              </tr>
+            </table></td></tr>
+        <tr> 
+          <td colspan="2"><div align="right"><img src="images/close.gif" onClick="javascript:window.close();" style="cursor:hand"></div></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td background="images/coupons3.jpg"><img src="images/coupons2.jpg" width="5" height="5"></td>
+    <td colspan="2" background="images/coupons3.jpg"><img src="images/coupons3.jpg" width="5" height="5"></td>
+    <td background="images/coupons3.jpg"><div align="right"><img src="images/coupons4.jpg" width="5" height="5"></div></td>
+  </tr>
+</table>
+ 
+</table>
+

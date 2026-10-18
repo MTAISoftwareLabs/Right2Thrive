@@ -1,0 +1,62 @@
+ul.square {
+	padding-inline-start: 3px;
+	list-style-position: inside;
+	list-style-type: square;
+}
+.space35{
+	height:35px;
+}
+span.highlight {
+	color: red;
+	font-weight: bold;
+}
+.form-section{
+	background: #e1f3ff;
+	padding-top: 25px;
+}
+.desc-section {
+	padding-top: 25px;
+}
+.form-title{
+	margin-bottom: 0px;
+}
+.form-subtitle{
+	border-bottom: solid 2px #d7d7d7;
+	line-height: 35px;	
+}
+.row.form-card {
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px #999999;
+}
+.form-card .form-card-head {
+	background: #5185BF;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #fff;
+}
+h1.pagetitle {
+	color: #23B04C;
+	font-style: italic;
+	margin: 25px 0px;
+}
+.copywrite {
+    padding-top: 15px;
+}
+.btn-close{
+    font-size: 35px;
+    color: #dc3545;
+    padding: 0px;
+    background: none;
+    border: none;
+}
+.page-index a {
+    text-decoration: none;
+    color: #e1f3ff;
+}
+.popupbox .section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.bold{
+	font-weight:500;
+}

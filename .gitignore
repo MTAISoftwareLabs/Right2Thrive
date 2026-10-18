@@ -1,0 +1,13 @@
+/node_modules
+/vendor
+.env
+/storage/*.key
+/storage/app/*
+/storage/framework/*
+/storage/logs/*
+/public/build
+/public/hot
+tutorapp/lms/upload/
+*.mpg
+*.mp4
+*.zip

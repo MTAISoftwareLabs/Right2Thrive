@@ -1,0 +1,702 @@
+/**********************
+ FONTS
+**********************
+
+AVAILABLE FONTS
+font-family: 'Bebas Neue', cursive; 400
+font-family: 'Open Sans', sans-serif; 300, 400, 600, 800
+font-family: 'Oswald', sans-serif; 400, 600
+*/
+
+/**********************
+ MAIN
+**********************/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background: #0c0c0c;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.homePage {
+  background: url("/images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 65px;
+}
+
+h1,
+h2,
+h3,
+h4,
+.button {
+  font-family: "Bebas Neue", cursive;
+}
+
+nav,
+.subNav {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.topBanner h1 {
+  font-size: 10rem;
+}
+.content h2 {
+  font-size: 6rem;
+  color: #07a7ef;
+  margin-bottom: 20px;
+}
+.content h3 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.content h4 {
+  font-size: 2.5rem;
+  margin: 40px 0 10px 0;
+  color: #07a7ef;
+}
+
+p {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+article ul {
+  margin-bottom: 15px;
+}
+
+article li {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+  list-style: circle;
+  margin-left: 40px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+article a {
+  color: #f8b80f;
+}
+
+.b {
+  font-weight: 600;
+}
+
+em {
+  color: #eb1820;
+  font-style: italic;
+}
+
+hr {
+  margin: 100px 0;
+}
+
+.sign {
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.sign span {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.sign span::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.button {
+  font-size: 2.5rem;
+  padding: 15px;
+  background-color: #f8b80f;
+  border-radius: 30px;
+  color: #0c0c0c;
+}
+
+.button:hover {
+  background: #07a7ef;
+  color: white;
+}
+
+.button:active {
+  color: #002637;
+}
+
+table {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+}
+
+header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 65px;
+  background: #07a7ef;
+  display: flex;
+  letter-spacing: 1px;
+}
+
+.subNav {
+  position: fixed;
+  z-index: 1000;
+  height: 30px;
+  right: 0px;
+  letter-spacing: 1px;
+  margin-top: 65px;
+  background: rgba(0, 0, 0, 0.25);
+  width: calc(100% - 260px);
+}
+
+.subNav ul {
+  padding: 0 0 0 10px;
+}
+
+.subNav li {
+  display: inline-block;
+}
+
+.subNav li + li::before {
+  content: " > ";
+  font-size: 2.3rem;
+}
+
+header img {
+  margin: 10px 0px 0px 20px;
+  width: 130px;
+  height: 130px;
+}
+
+header nav {
+  flex-direction: row-reverse;
+  flex: 7;
+}
+
+header ul {
+  text-align: right;
+}
+
+header li {
+  display: inline-block;
+  padding: 26px 15px 22.5px 15px;
+}
+
+header a li:hover {
+  background: white;
+  color: #07a7ef;
+}
+
+section {
+  width: 100%;
+  height: auto;
+}
+
+/**********************
+ HOME PAGE
+**********************/
+
+/* ----- WELCOME SECTION ----- */
+
+.homePage main {
+  padding-top: 140px;
+}
+
+.home-banner {
+  height: 185px;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.home-banner span::after {
+  content: "\A";
+  white-space: pre;
+}
+
+.home-banner span + span {
+  color: #07a7ef;
+  font-size: 6rem;
+}
+
+.home-banner span + span + span {
+  color: white;
+  font-size: 4.5rem;
+}
+
+/* ----- NAVIGATION SECTION ----- */
+
+.home-nav-blocks {
+  padding: 0 20px;
+  min-height: 500px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 3rem;
+  line-height: 10px;
+}
+
+.home-nav-blocks ul {
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.home-nav-blocks a {
+  text-align: center;
+  flex: 1;
+  overflow: hidden;
+  display: block;
+}
+
+.home-nav-blocks li {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 0;
+  padding-top: 80%;
+}
+
+.home-nav-blocks li > span {
+  float: left;
+  width: 100%;
+  margin-top: -20%;
+}
+
+.comingSoon {
+  font-size: 1.5rem;
+}
+
+.comingSoon::before {
+  content: "\A";
+  white-space: pre;
+}
+
+@media all and (max-width: 1000px) {
+  .home-nav-blocks {
+    font-size: 5rem;
+  }
+  .home-nav-blocks ul {
+    display: block;
+  }
+  .home-nav-blocks li {
+    width: 60%;
+    height: 0;
+    padding-top: 60%;
+    margin-bottom: 50px;
+  }
+  .home-nav-blocks li > span {
+    float: left;
+    width: 100%;
+    margin-top: -20%;
+  }
+  .comingSoon {
+    font-size: 2.5rem;
+    line-height: 20px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .home-nav-blocks {
+    font-size: 6rem;
+  }
+  .home-nav-blocks li {
+    width: 90%;
+    padding-top: 90%;
+  }
+  .comingSoon {
+    font-size: 3rem;
+    line-height: 25px;
+  }
+}
+
+@media all and (min-width: 1150px) {
+  .home-nav-blocks {
+    font-size: 5rem;
+    line-height: ;
+  }
+}
+
+.magazine {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.7) 70%,
+      rgb(0, 0, 0)
+    ),
+    url("../images/jan22-magazine.jpg");
+  background-size: cover;
+  background-position: 0% 20%;
+  background-repeat: no-repeat;
+}
+
+.workshops {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.7) 70%,
+      rgb(0, 0, 0)
+    ),
+    url("../images/workshop.jpg");
+  background-size: cover;
+  background-position: 0% 20%;
+  background-repeat: no-repeat;
+}
+
+.resources {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.7) 70%,
+      rgb(0, 0, 0)
+    ),
+    url("../images/brand-guidelines.jpg");
+  background-size: cover;
+  background-position: 0% 20%;
+  background-repeat: no-repeat;
+}
+
+.home-nav-blocks a li:active {
+  background-position: 0 -10px;
+}
+
+.magazine:hover {
+  background-image: linear-gradient(
+      to bottom,
+      rgb(248, 148, 15, 0.6),
+      rgba(248, 147, 15, 0.7),
+      rgb(248, 148, 15)
+    ),
+    url("../images/jan22-magazine.jpg");
+}
+
+.workshops:hover {
+  background-image: linear-gradient(
+      to bottom,
+      rgb(248, 148, 15, 0.6),
+      rgba(248, 147, 15, 0.7),
+      rgb(248, 148, 15)
+    ),
+    url("../images/workshop.jpg");
+}
+
+.resources:hover {
+  background-image: linear-gradient(
+      to bottom,
+      rgb(248, 148, 15, 0.6),
+      rgba(248, 147, 15, 0.7),
+      rgb(248, 148, 15)
+    ),
+    url("../images/brand-guidelines.jpg");
+}
+
+/**********************
+ PAGES DEFAULTS
+**********************/
+
+/* ----- SIDE NAVS ----- */
+
+.sideNav > nav {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  width: 260px;
+  min-height: 100%;
+  background: white;
+  font-size: 1.7rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.sideNav > nav ul {
+  margin-top: 160px;
+  color: black;
+  text-align: right;
+}
+
+.sideNav > nav li {
+  padding: 18px;
+}
+
+.sideNav .selected {
+  background: #f8b80f;
+  color: white;
+}
+
+.sideNav > nav li:hover {
+  background: #07a7ef;
+  color: white;
+}
+
+.sideNav > nav li:hover span {
+  color: #f8b80f;
+}
+
+.sideNav > nav li:active {
+  background: #002637;
+  color: white;
+}
+
+.sideNav > nav li:active span {
+  color: #07a7ef;
+}
+
+.sideNav nav li span {
+  color: #07a7ef;
+}
+
+li.selected span {
+  color: #002637;
+}
+
+.sideNav nav li span::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.sideNav main {
+  width: 100%;
+  padding-left: 260px;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.inlineBlock li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.inlineBlock li::before {
+    content: '\2022  ';
+}
+
+.videoPlayer {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+}
+
+.videoPlayer iframe {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----- TOP BANNER IMAGE ----- */
+.topBanner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 38, 55, 1) 60%,
+    rgba(0, 38, 55, 1) 70%,
+    rgb(12, 12, 12)
+  );
+}
+
+.topBanner::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.04;
+  background-image: url("/images/jan22-magazine.jpg");
+  background-size: cover;
+  background-position: 0% 20%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.topBannerContent {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+}
+
+.content {
+  padding: 40px 40px 50px 40px;
+}
+
+article.content img {
+  width: 40%;
+  padding: 0 20px 20px 20px;
+}
+
+
+/**********************
+ MAGAZINE PAGES
+**********************/
+
+/* ----- MAGAZINES PAGE ----- */
+.issues {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.issues > h2 {
+  flex: 0 0 100%;
+}
+
+.issues h3 span {
+  color: #07a7ef;
+  font-size: 2.5rem;
+}
+
+.issues h3 span::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.issues section {
+  padding: 20px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 22%;
+  height: auto;
+  background: rgba(0, 38, 55, 0.5);
+}
+
+@media all and (max-width: 1400px) {
+    .issues section {
+        width: 30%;
+    }
+}
+
+@media all and (max-width: 1240px) {
+    .issues section {
+        width: 45%;
+    }
+}
+
+@media all and (max-width: 940px) {
+    .issues section {
+        width: 100%;
+    }
+}
+
+.issues section p {
+  font-size: 1.2rem;
+  color: white;
+  line-height: 16px;
+  margin-bottom: 0px;
+}
+
+.issues section a:hover {
+  opacity: 0.7;
+}
+
+.issues > section img {
+  width: 100%;
+  height: auto;
+}
+
+/* ----- ISSUE PAGE ----- */
+
+/* ----- WORKSHOP PAGE ----- */
+.author {
+  position: relative;
+  display: block;
+  height: 100px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.author img {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+  padding: 5px 5px 5px 0 !important;
+  margin: 0px;
+  vertical-align: middle;
+}
+
+.author h3 {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 2.5rem;
+  line-height: 20px;
+  margin: 0;
+}
+
+.author h3 span {
+  font-size: 2rem;
+  color: #07a7ef;
+  line-height: 0;
+  margin: 0;
+}
+
+.author h3 span:before {
+  content: "\A";
+  white-space: pre;
+}
+
+/**********************
+ FOOTER SECTION
+**********************/
+
+/* footer {
+  position: relative;
+  width: 100%;
+  clear: both;
+}
+
+footer ul {
+  display: flex;
+  background: #07a7ef;
+}
+
+footer li {
+  flex: 1;
+  text-align: center;
+  padding: 20px 0px;
+} */
+
+

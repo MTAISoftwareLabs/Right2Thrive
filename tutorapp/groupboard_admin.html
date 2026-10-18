@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML >
+ <HEAD>
+  <LINK REL="STYLESHEET" HREF="http://www.groupboard.com/style.css" TYPE="text/css">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=ISO-8859-1">
+<META NAME="keywords" CONTENT="whiteboard,shared,free,online,collaboration,java,interactive,applet,multi-user,chat,white,board,groupboard,group,draw,distance learning,voip,conferencing,tutoring,software,realtime"><META NAME="description" CONTENT="Groupboard - free real-time multi-user java whiteboard and chat.">  <TITLE>Groupboard - multi-user whiteboard and chat</TITLE>
+  <SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!-- 
+var drawingState = true, clearingState = true, loadingState = true;
+var a1='http://www.groupboard.com/Icons.3dlook/', a2=a1+'tool_', a3=a1+'size_', a4=a1+'colour_', a5='_on', a6='.gif';
+
+var using_eraser = false;
+var cur_tool = 4;
+var cur_colour = 6;
+var cur_size = 1;
+var prev_tool = -1;
+var prev_size;
+var prev_colour;
+var tName = 'http://www.groupboard.com/Icons.3dlook/tool_';
+var on    = '_on';
+var gif    = '.gif';
+var tImg1=new Image();tImg1.src=a2+'1'+a6;
+var tImg2=new Image();tImg2.src=a2+'2'+a6;
+var tImg3=new Image();tImg3.src=a2+'3'+a6;
+var tImg4=new Image();tImg4.src=a2+'4'+a6;
+var tImg5=new Image();tImg5.src=a2+'11'+a6;
+var tImg6=new Image();tImg6.src=a2+'12'+a6;
+var tImg7=new Image();tImg7.src=a2+'13'+a6;
+var tImg8=new Image();tImg8.src=a2+'64'+a6;
+var tImg9=new Image();tImg9.src=a2+'1_on'+a6;
+var tImg10=new Image();tImg10.src=a2+'2_on'+a6;
+var tImg11=new Image();tImg11.src=a2+'3_on'+a6;
+var tImg12=new Image();tImg12.src=a2+'4_on'+a6;
+var tImg13=new Image();tImg13.src=a2+'11_on'+a6;
+var tImg14=new Image();tImg14.src=a2+'12_on'+a6;
+var tImg15=new Image();tImg15.src=a2+'13_on'+a6;
+var tImg16=new Image();tImg16.src=a2+'64_on'+a6;
+
+var tImg17=new Image();tImg17.src=a2+'71_on'+a6;
+
+var sImg1=new Image();sImg1.src=a3+'1'+a6;
+var sImg2=new Image();sImg2.src=a3+'2'+a6;
+var sImg3=new Image();sImg3.src=a3+'3'+a6;
+var sImg4=new Image();sImg4.src=a3+'4'+a6;
+var sImg5=new Image();sImg5.src=a3+'5'+a6;
+var sImg6=new Image();sImg6.src=a3+'6'+a6;
+var sImg7=new Image();sImg7.src=a3+'7'+a6;
+var sImg8=new Image();sImg8.src=a3+'8'+a6;
+var sImg9=new Image();sImg9.src=a3+'9'+a6;
+var sImg10=new Image();sImg10.src=a3+'10'+a6;
+var sImg11=new Image();sImg11.src=a3+'1_on'+a6;
+var sImg12=new Image();sImg12.src=a3+'2_on'+a6;
+var sImg13=new Image();sImg13.src=a3+'3_on'+a6;
+var sImg14=new Image();sImg14.src=a3+'4_on'+a6;
+var sImg15=new Image();sImg15.src=a3+'5_on'+a6;
+var sImg16=new Image();sImg16.src=a3+'6_on'+a6;
+var sImg17=new Image();sImg17.src=a3+'7_on'+a6;
+var sImg18=new Image();sImg18.src=a3+'8_on'+a6;
+var sImg19=new Image();sImg19.src=a3+'9_on'+a6;
+var sImg20=new Image();sImg20.src=a3+'10_on'+a6;
+
+var cImg1=new Image();cImg1.src=a4+'0'+a6;
+var cImg2=new Image();cImg2.src=a4+'1'+a6;
+var cImg3=new Image();cImg3.src=a4+'2'+a6;
+var cImg4=new Image();cImg4.src=a4+'3'+a6;
+var cImg5=new Image();cImg5.src=a4+'4'+a6;
+var cImg6=new Image();cImg6.src=a4+'5'+a6;
+var cImg7=new Image();cImg7.src=a4+'6'+a6;
+var cImg8=new Image();cImg8.src=a4+'7'+a6;
+var cImg9=new Image();cImg9.src=a4+'8'+a6;
+var cImg10=new Image();cImg10.src=a4+'9'+a6;
+var cImg11=new Image();cImg11.src=a4+'10'+a6;
+var cImg12=new Image();
+var cImg13=new Image();cImg13.src=a4+'0_on'+a6;
+var cImg14=new Image();cImg14.src=a4+'1_on'+a6;
+var cImg15=new Image();cImg15.src=a4+'2_on'+a6;
+var cImg16=new Image();cImg16.src=a4+'3_on'+a6;
+var cImg17=new Image();cImg17.src=a4+'4_on'+a6;
+var cImg18=new Image();cImg18.src=a4+'5_on'+a6;
+var cImg19=new Image();cImg19.src=a4+'6_on'+a6;
+var cImg20=new Image();cImg20.src=a4+'7_on'+a6;
+var cImg21=new Image();cImg21.src=a4+'8_on'+a6;
+var cImg22=new Image();cImg22.src=a4+'9_on'+a6;
+var cImg23=new Image();cImg23.src=a4+'10_on'+a6;
+var cImg24=new Image();
+
+var aImg1=new Image();aImg1.src=a1+'allow_drawing'+a6;
+var aImg2=new Image();aImg2.src=a1+'allow_clearing'+a6;
+var aImg3=new Image();aImg3.src=a1+'allow_loading'+a6;
+var aImg4=new Image();aImg4.src=a1+'allow_drawing_on'+a6;
+var aImg5=new Image();aImg5.src=a1+'allow_clearing_on'+a6;
+var aImg6=new Image();aImg6.src=a1+'allow_loading_on'+a6;
+
+function eraser()
+{
+// store current size and colour so we can get them back
+if (using_eraser)
+{ return; }
+using_eraser = true;
+prev_tool = cur_tool;
+prev_colour = cur_colour;
+prev_size = cur_size;
+var d = document;
+gb.set_tool(4); // freehand
+d.tool_71.src = tName + '71' + on + gif;
+setCurrColour(0);  // white
+setCurrSize(10);
+
+// switch off current icon
+d.tool_1.src  = tName +  '1' + gif;
+d.tool_2.src  = tName +  '2' + gif;
+d.tool_3.src  = tName +  '3' + gif;
+d.tool_4.src  = tName +  '4' + gif;
+d.tool_11.src = tName + '11' + gif;
+d.tool_12.src = tName + '12' + gif;
+d.tool_13.src = tName + '13' + gif;
+d.tool_64.src = tName + '64' + gif;
+}
+function TB(type,value,alt,state)
+{
+ var d=document;
+ if(d==null) return;
+
+ var script, name, size;
+ switch(type)
+ {
+  case 0: script='Tool('; name='tool_'; size=24; break;
+  case 1: script='Size('; name='size_'; size=24; break;
+  case 2: script='Colour('; name='colour_'; size=16; break;
+ }
+
+ name+=value;
+
+ d.write('<TD><A HREF="javascript:setCurr',script,value,')" onMouseOver="window.status=\'',alt,'\';return true;"><IMG ALT="',alt,'" TITLE="',alt,'" NAME="',name,'" SRC="',a1,name,'\n');
+
+ if(state) d.write(a5);
+
+ d.writeln(a6,'" ALT="',alt,'" WIDTH=',size,' HEIGHT=',size,' BORDER=0></A></TD>');
+}
+
+function NB(script,name,alt)
+{
+ if(document==null) return;
+
+ document.writeln('<TR><TD><A HREF="javascript:gb.',script,'()" onMouseOver="window.status=\'',alt,'\';return true;"><IMG SRC="',a1,name,a6,'" ALT="',alt,'" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+}
+
+function nRow()
+{
+ if(document==null) return;
+
+ document.writeln('</TR><TR>');
+}
+
+function nTable()
+{
+ if(document==null) return;
+
+ document.writeln('</TABLE><BR><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center>');
+}
+
+function setCurrTool(tool)
+{
+ var d=document;
+ gb.set_tool(tool);
+
+using_eraser = false;
+cur_tool = tool;
+if (prev_tool != -1)
+{
+// Restore previous colour and size
+prev_tool = -1;
+setCurrSize(prev_size);
+setCurrColour(prev_colour);
+}
+ var t1='',t2='',t3='',t4='',t11='',t12='',t13='',t64='', t71='';
+ switch(tool)
+ {
+   case 1: t1=a5; break;
+   case 2: t2=a5; break;
+   case 3: t3=a5; break;
+   case 4: t4=a5; break;
+   case 11: t11=a5; break;
+   case 12: t12=a5; break;
+   case 13: t13=a5; break;
+   case 64: t64=a5; break;
+   case 71: t71=a5; break;
+ }
+
+ d.tool_1.src=a2+'1'+t1+a6;
+ d.tool_2.src=a2+'2'+t2+a6;
+ d.tool_3.src=a2+'3'+t3+a6;
+ d.tool_4.src=a2+'4'+t4+a6;
+ d.tool_11.src=a2+'11'+t11+a6;
+ d.tool_12.src=a2+'12'+t12+a6;
+ d.tool_13.src=a2+'13'+t13+a6;
+ d.tool_64.src=a2+'64'+t64+a6;
+ d.tool_71.src=a2+'71'+t71+a6;
+}
+
+function setCurrSize(size)
+{
+ var d=document;
+ cur_size = size;
+ gb.set_thickness(size);
+
+ var s1='',s2='',s3='',s4='',s5='',s6='',s7='',s8='',s9='',s10='';
+ switch(size)
+ {
+  case 1: s1=a5; break;
+  case 2: s2=a5; break;
+  case 3: s3=a5; break;
+  case 4: s4=a5; break;
+  case 5: s5=a5; break;
+  case 6: s6=a5; break;
+  case 7: s7=a5; break;
+  case 8: s8=a5; break;
+  case 9: s9=a5; break;
+  case 10: s10=a5; break;
+ }
+
+ d.size_1.src=a3+'1'+s1+a6;
+ d.size_2.src=a3+'2'+s2+a6;
+ d.size_3.src=a3+'3'+s3+a6;
+ d.size_4.src=a3+'4'+s4+a6;
+ d.size_5.src=a3+'5'+s5+a6;
+ d.size_6.src=a3+'6'+s6+a6;
+ d.size_7.src=a3+'7'+s7+a6;
+ d.size_8.src=a3+'8'+s8+a6;
+ d.size_9.src=a3+'9'+s9+a6;
+ d.size_10.src=a3+'10'+s10+a6;
+}
+
+function setCurrColour(colour)
+{
+ var d=document;
+cur_colour = colour;
+ gb.set_colour(colour);
+
+ var c0='',c1='',c2='',c3='',c4='',c5='',c6='',c7='',c8='',c9='',c10='';
+ switch(colour)
+ {
+  case 0: c0=a5; break;
+  case 1: c1=a5; break;
+  case 2: c2=a5; break;
+  case 3: c3=a5; break;
+  case 4: c4=a5; break;
+  case 5: c5=a5; break;
+  case 6: c6=a5; break;
+  case 7: c7=a5; break;
+  case 8: c8=a5; break;
+  case 9: c9=a5; break;
+  case 10: c10=a5; break;
+ }
+
+ d.colour_0.src=a4+'0'+c0+a6;
+ d.colour_1.src=a4+'1'+c1+a6;
+ d.colour_2.src=a4+'2'+c2+a6;
+ d.colour_3.src=a4+'3'+c3+a6;
+ d.colour_4.src=a4+'4'+c4+a6;
+ d.colour_5.src=a4+'5'+c5+a6;
+ d.colour_6.src=a4+'6'+c6+a6;
+ d.colour_7.src=a4+'7'+c7+a6;
+ d.colour_8.src=a4+'8'+c8+a6;
+ d.colour_9.src=a4+'9'+c9+a6;
+ d.colour_10.src=a4+'10'+c10+a6;
+}
+
+function doClearButton()
+{
+ var reply=confirm('Are you sure you wish to clear?');
+ if(reply) gb.clear();
+}
+
+function allowDrawing()
+{
+ var newSrc = a1 + 'allow_drawing';
+
+ if( !drawingState ) newSrc += '_on';
+
+ document.allowDrawing.src = newSrc + '.gif';
+ drawingState = !drawingState;
+ gb.set_allow_drawing( drawingState );
+}
+
+function allowClearing()
+{
+ var newSrc = a1 + 'allow_clearing';
+
+ if( !clearingState ) newSrc += '_on';
+
+ document.allowClearing.src = newSrc + '.gif';
+ clearingState = !clearingState;
+ gb.set_allow_clearing( clearingState );
+}
+
+function allowLoading()
+{
+ var newSrc = a1 + 'allow_loading';
+
+ if( !loadingState ) newSrc += '_on';
+
+ document.allowLoading.src = newSrc + '.gif';
+ loadingState = !loadingState;
+ gb.set_allow_loading( loadingState );
+}
+
+function doOpenSmall(url)
+{
+ var w = window.open(url,"LinksSmall","scrollbars=yes,width=500,height=310");
+ w.focus();
+}
+
+function doOpen(url)
+{
+ var w = window.open(url,'Links','scrollbars=yes');
+ w.focus();
+}
+
+// -->
+  </SCRIPT>
+ </HEAD>
+ <BODY   TEXT="#000000" BGCOLOR="#ffffff" LINK="#ff0000" VLINK="#000000" ALINK="#000000">
+  <CENTER>
+   <TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH="100%"><TBODY>
+    <TR><TD HEIGHT=10><SPACER TYPE=BLOCK HEIGHT=10></TD></TR>
+    <TR ALIGN=center><TD>
+     <TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0><TBODY><TR>
+      <TD><IMG SRC="http://www.groupboard.com/Tabs/Multi-user_Red_1.gif" ALT="Multi-user" WIDTH=68 HEIGHT=18 BORDER=0></TD>
+      <TD><A HREF="http://www.groupboard.com/mp/board_3dlook.cgi?board_id=114499&admin=true&large=true&adverts=false&singleuser=true"><IMG SRC="http://www.groupboard.com/Tabs/Single-user_Red_0.gif" ALT="Single-user" WIDTH=76 HEIGHT=18 BORDER=0></A></TD>
+      <TD><A HREF="http://www.groupboard.com/mp/board_3dlook.cgi?board_id=114499&admin=true&large=true&adverts=false&singleuser=true"><IMG SRC="http://www.groupboard.com/Tabs/end_tab.gif" ALT="Single-user" WIDTH=1 HEIGHT=18 BORDER=0></A></TD>
+      <TD WIDTH=40><SPACER TYPE=BLOCK WIDTH=40 HEIGHT=1></TD>
+      <TD><A HREF="http://www.groupboard.com/mp/generic_gallery.cgi?board=board_3dlook.cgi&board_id=114499&admin=true&large=true&adverts=false"><IMG SRC="http://www.groupboard.com/Tabs/Gallery_Red_0.gif" ALT="Gallery" WIDTH=52 HEIGHT=18 BORDER=0></A></TD>
+      <TD><A HREF="http://www.groupboard.com/mp/generic_gallery.cgi?board=board_3dlook.cgi&board_id=114499&admin=true&large=true&adverts=false"><IMG SRC="http://www.groupboard.com/Tabs/end_tab.gif" ALT="Gallery" WIDTH=1 HEIGHT=18 BORDER=0></A></TD>
+<TD>&nbsp;&nbsp;</td><td><div style="height: 18px; overflow:hidden"><form style="margin:0" action="http://www.groupboard.com/mp/gb.cgi"><input type=hidden name=admin value=true><input type=hidden name=show_title value=true><input type=hidden name=iframe value=false><input type=hidden name=ajax value=false><input type=hidden name=hide_chat value=false><input type=hidden name=adverts value=false><input type=hidden name=allow_nonadmin_upload value=true><input type=hidden name=groupconf value=false><input type=hidden name=large value=true><input type=hidden name=groupconf_id value=><input type=hidden name=board_id value=114499><select name=size onchange="javascript:submit();"><option selected value=small>1024x768</option><option  value=large>1280x1024</option><option  value=verylarge>1920x1200</option></select></form></div></td>     </TR></TBODY></TABLE>
+    </TD></TR>
+    <TR ALIGN=center><TD WIDTH="100%" BGCOLOR="#c00000"
+>     <TABLE CELLPADDING=0 CELLSPACING=6 BORDER=0><TBODY><TR>
+      <TD BGCOLOR="#ffffff" WIDTH=2><SPACER TYPE=BLOCK WIDTH=2></TD>
+      <TD ALIGN=center><A HREF="javascript:doOpen('http://www.groupboard.com//manuals/javascript_3dlook/index_admin.html')" onMouseOver="window.status='User Guide';return true;"><FONT COLOR="#ffffff"><B><font size=-1>User Guide</font></B></FONT></A></TD>
+      <TD BGCOLOR="#ffffff" WIDTH=2><SPACER TYPE=BLOCK WIDTH=2></TD>
+      <TD ALIGN=center><A HREF="javascript:doOpen('http://www.groupboard.com/manuals/javascript_3dlook/admin_guide.html')" onMouseOver="window.status='Admin Guide';return true;"><FONT COLOR="#ffffff"><B><font size=-1>Admin Guide</font></B></FONT></A></TD>
+      <TD BGCOLOR="#ffffff" WIDTH=2><SPACER TYPE=BLOCK WIDTH=2></TD>
+     </TR></TBODY></TABLE>
+    </TD></TR>
+    <TR ALIGN=center><TD WIDTH="100%" HEIGHT=20 BGCOLOR="#ffffff"><SPACER TYPE=BLOCK HEIGHT=20></TD></TR>
+   </TBODY></TABLE>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!-- 
+ var d=document;
+
+ d.writeln('<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2><TR><TD>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center>');
+ d.writeln('<TR><TD><A HREF="javascript:allowDrawing()" onMouseOver="window.status=\'Allow Drawing\';return true;"><IMG NAME="allowDrawing" SRC="',a1,'allow_drawing_on.gif" ALT="Allow Drawing" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ d.writeln('<TR><TD><A HREF="javascript:allowClearing()" onMouseOver="window.status=\'Allow Clearing\';return true;"><IMG NAME="allowClearing" SRC="',a1,'allow_clearing_on.gif" ALT="Allow Clearing" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ d.writeln('<TR><TD><A HREF="javascript:allowLoading()" onMouseOver="window.status=\'Allow Loading\';return true;"><IMG NAME="allowLoading" SRC="',a1,'allow_loading_on.gif" ALT="Allow Loading" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ nTable();
+ NB('show_drawing_log','drawing_log','Drawing log');
+ NB('show_banlist','ban_list','Ban list');
+ NB('show_board_info','board_info','Board Info');
+ nTable();
+ NB('show_message_board','messages','Message Board');
+ NB('show_games','games','Games');
+ nTable();
+ NB('set_background','set_background','Set background');
+ d.writeln('<TR><TD><A HREF="javascript:doOpenSmall(\'http://www.groupboard.com/mp/fileupload.cgi?is_popup=true&board_id=114499&hide_password=true\')" onMouseOver="window.status=\'Upload Background\';return true;"><IMG SRC="',a1,'upload_background.gif" ALT="Upload Background" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ nTable();
+ document.writeln('<TR><TD><A HREF="javascript:doClearButton()" onMouseOver="window.status=\'Clear\';return true;"><IMG SRC="',a1,'clear.gif" ALT="Clear" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ NB('save','save','Save');
+ NB('load','load','Load');
+ NB('print_pic','print','Print');
+ nTable();
+ d.writeln('<TR><TD><A HREF="javascript:doOpen(\'http://www.groupboard.com//manuals/javascript_3dlook/index_admin.html\')" onMouseOver="window.status=\'Help\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/help.gif" ALT="Help" WIDTH=75 HEIGHT=24 BORDER=0></A></TD></TR>');
+ d.writeln('</TABLE></TD><TD VALIGN=top ALIGN=center>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff">');
+ d.writeln('<TR ALIGN=center><TD BGCOLOR="#d2d2d2">');
+ d.writeln('<APPLET NAME=gb WIDTH=840 HEIGHT=760 ARCHIVE=groupboard.jar SERVER_ADDRESS="www.groupboard.com" CODE=groupboard.class CODEBASE="http://www.groupboard.com/java">');
+ d.writeln('<PARAM name=java_arguments value="-Xmx256m">');
+ d.writeln('<PARAM NAME=board_id VALUE=114499>');
+ d.writeln('<PARAM NAME=default_thickness VALUE=1>');
+ d.writeln('<PARAM NAME=default_tool VALUE=4>');
+ d.writeln('<PARAM NAME=default_colour VALUE=6>');
+ d.writeln('<PARAM NAME=board_width VALUE=810>');
+ d.writeln('<PARAM NAME=board_height VALUE=480>');
+ d.writeln('<PARAM NAME=background_red VALUE=210>');
+ d.writeln('<PARAM NAME=background_green VALUE=210>');
+ d.writeln('<PARAM NAME=background_blue VALUE=210>');
+ d.writeln('<PARAM NAME=hide_gui VALUE=true>');
+ d.writeln('<PARAM NAME=use_utf VALUE=false>');
+ d.writeln('<PARAM NAME=display_title VALUE=true>');
+ d.writeln('<PARAM NAME=show_ip_addresses VALUE=true>');
+ d.writeln('<PARAM NAME=enhanced_msgboard VALUE=false>');
+ d.writeln('<PARAM NAME=tunnel_port VALUE=80>');
+ d.writeln('<PARAM NAME=use_tunnel VALUE=false>');
+ d.writeln('<PARAM NAME=need_password VALUE=true>');
+ d.writeln('<PARAM NAME=hide_chat VALUE=false>');
+ d.writeln('<PARAM NAME=multi_user VALUE=true>');
+ d.writeln('<PARAM NAME=display_drawing_user VALUE=true>');
+ d.writeln('<PARAM NAME=extended_palette VALUE=true>');
+ d.writeln('<PARAM NAME=allow_set_background VALUE=true>');
+ d.writeln('<PARAM NAME=allow_load VALUE=true>');
+ d.writeln('<H1>ERROR: you do not have java. You must either <a href="http://java.sun.com/getjava">install java</a> or use the <a href="http://www.groupboard.com/mp/gb.cgi?ajax=true&board_id=114499&admin=true&large=true&adverts=false">non-java version of Groupboard</a></H1>');
+ d.writeln('</APPLET>');
+ d.writeln('</TD></TR></TABLE>');
+var gb = document.gb;
+d.writeln('</TD>');
+ d.writeln('<TD><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR>');
+ TB(0,4,'Freehand',cur_tool==4);TB(1,1,'Size 1',cur_size==1);nRow();
+ TB(0,1,'Line',cur_tool==1);TB(1,2,'Size 2',cur_size==2);nRow();
+ TB(0,2,'Oval',cur_tool==2);TB(1,3,'Size 3',cur_size==3);nRow();
+ TB(0,11,'Rectangle',cur_tool==11);TB(1,4,'Size 4',cur_size==4);nRow();
+ TB(0,12,'Filled oval',cur_tool==12);TB(1,5,'Size 5',cur_size==5);nRow();
+ TB(0,13,'Filled rectangle',cur_tool==13);TB(1,6,'Size 6',cur_size==6);nRow();
+ TB(0,64,'Flood fill',cur_tool==64);TB(1,7,'Size 7',cur_size==7);nRow();
+ TB(0,3,'Text (click on size icons at the right to change font size)',cur_tool==3);TB(1,8,'Size 8',cur_size==8);nRow();
+d.writeln('<TD><A HREF="javascript:eraser()" onMouseOver="window.status=\'Eraser\';return true;"><IMG NAME="tool_71" SRC="http://www.groupboard.com/Icons.3dlook/tool_71.gif" TITLE="Eraser" ALT="Eraser" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ TB( 1, 9, 'Size 9', cur_size==9 );nRow();
+ d.writeln('<TD><A HREF="javascript:doClearButton()" onMouseOver="window.status=\'Clear\';return true;"><IMG SRC="http://www.groupboard.com/Icons.3dlook/tool_trash.gif" ALT="Clear" WIDTH=24 HEIGHT=24 BORDER=0></A></TD>');
+ TB( 1, 10, 'Size 10', cur_size==10 );
+ d.writeln('</TR></TABLE><BR>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=0 BGCOLOR="#ffffff" ALIGN=center><TR><TD>');
+ d.writeln('<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#ffffff"><TR>');
+ TB(2,0,'White',cur_colour==0);TB(2,7,'Grey',cur_colour==7);TB(2,6,'Black',cur_colour==6);nRow();
+ TB(2,1,'Red',cur_colour==1);TB(2,9,'Cyan',cur_colour==9);TB(2,4,'Pink',cur_colour==4);nRow();
+ TB(2,2,'Green',cur_colour==2);TB(2,5,'Orange',cur_colour==5);TB(2,10,'Brown',cur_colour==10);nRow();
+ TB(2,3,'Blue',cur_colour==3);TB(2,8,'Magenta',cur_colour==8);
+ document.writeln('<TD><A HREF="javascript:gb.show_extended_palette()" onMouseOver="window.status=\'Extended Colour Palette\';return true;"><IMG SRC="',a1,'tool_palette.gif" ALT="Extended Colour Palette" WIDTH=16 HEIGHT=16 BORDER=0></A></TD>');
+ d.writeln('</TR></TABLE></TD></TR></TABLE></TD>');
+ d.writeln('</TR>');
+ d.writeln('</TABLE>');
+// -->
+</SCRIPT>
+   <NOSCRIPT><P CLASS=medium><B>&nbsp; You need JavaScript v1.2 or above to be enabled to view the Groupboard. If you can, please enable JavaScript for your browser.</B></P></NOSCRIPT><BR>
+   <P ALIGN=center>If you cannot connect to Groupboard, perhaps due to a firewall, you should try the <B><A HREF="http://www.groupboard.com/mp/board_3dlook.cgi?board_id=114499&admin=true&large=true&adverts=false&use_tunnel=true">tunneling version</A></B> which can be slower but should work.</P>
+<br><br><center><p><hr width=200 size=1 align=center>Powered by <a href="http://www.groupboard.com" target=_top>Groupboard</a></center> </BODY>
+</HTML>

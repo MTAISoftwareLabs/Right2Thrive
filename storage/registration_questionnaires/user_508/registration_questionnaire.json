@@ -1,0 +1,26 @@
+{
+    "user_id": 508,
+    "questionnaire": {
+        "submitted_at": "2026-05-15T19:44:55+01:00",
+        "in_work": "1",
+        "qualifications_held": "Vitae modi delectus",
+        "employment_detail": "Est est consectetur",
+        "career_interests": "Ea tempora eum verit",
+        "qualifications_wanted": "Consequatur necessit",
+        "skills": "In doloremque quis v",
+        "hobbies": "Dicta fugiat tempore",
+        "has_disability": "1",
+        "disability_detail": "In voluptate error s",
+        "terms_accepted": true
+    },
+    "personal": {
+        "name": "mansoor",
+        "email": "mansoorqazi71@gmail.com",
+        "telephone": "03110976199",
+        "mobile": "+1 (962) 348-3089",
+        "country": "PAKISTAN",
+        "date_of_birth": "2024-10-13",
+        "employment_status": "Unemployed",
+        "gender": "Female"
+    }
+}

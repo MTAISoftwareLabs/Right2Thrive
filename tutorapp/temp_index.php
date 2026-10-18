@@ -1,0 +1,215 @@
+<?php
+ob_start();
+session_start();
+include_once("dbConnection.php");
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="cufon-active cufon-ready" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Welcome to CareerPaths Online</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-1">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="Keywords" content="">
+<meta name="Description" content="Welcome to CareerPaths Online">
+<meta name="robots" content="index,follow">
+<link type="text/css" rel="stylesheet" media="screen" href="css/newstyle.css">
+<link rel="shortcut icon" href="" title="Favicon">
+<!--[if lt IE 8]>
+
+<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+
+<![endif]-->
+
+
+<script src="js/cufon-yui.js" type="text/javascript"></script>
+
+<style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style></style>
+
+<script src="js/Lacuna_Regular_400.js" type="text/javascript"></script>
+<script src="js/Aller_400.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+Cufon.replace('h1', { fontFamily: 'Lacuna Regular' });
+Cufon.replace('h2', { fontFamily: 'Aller' });
+Cufon.replace('h3', { fontFamily: 'Lacuna Regular' });
+</script>
+<script type="text/javascript" language="javascript">
+var regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var regExpName1 = /^[0-9 -]+$/;
+var url= /[A-Za-z0-9\.-]{3,}\.[A-Za-z]{3}/;
+var regexp = /^(\d{10}|\d{3}-\d{3}-\d{4}|\(\d{3}\)\d{3}-\d{4})$/;
+var regexp1 = /^(\d{8}|\d{2}-\d{2}-\d{4}|\(\d{2}\)\d{2}-\d{4})$/;
+function checklogin(){
+
+if(document.FRMLOGIN1.TXUSERID.value=="")
+{
+//alert("hi");
+alert("please enter email");
+document.FRMLOGIN1.TXUSERID.focus();
+return false;
+
+}
+if(document.FRMLOGIN1.TXUSERID.value=="")
+{
+//alert("hi");
+alert("please enter password");
+document.FRMLOGIN1.TXUSERID.focus();
+return false;
+
+}
+
+return true;
+}
+
+</script>
+<script type="text/javascript" language="javascript" src="js/loginvalid.js"></script>
+<!-- Start of Zopim Live Chat Script -->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=
+z.s=d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o
+){z.set._.push(o)};$.setAttribute('charset','utf-8');$.async=!0;z.set.
+_=[];$.src=('https:'==d.location.protocol?'https://ssl':'http://cdn')+
+'.zopim.com/?VCKd3OfLMyuzj6Qnh5CabrOKXlB7kHBd';$.type='text/java'+s;z.
+t=+new Date;z._=[];e.parentNode.insertBefore($,e)})(document,'script')
+</script>
+<!-- End of Zopim Live Chat Script -->
+
+<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34503062-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+
+</head>
+
+<body>
+
+<!-- Start Wrapper -->
+<div id="wrapper">
+
+<!-- Start Header -->
+<?php include "includes/header2.php"; ?>
+<!-- End Header -->
+<div><p></p></div>
+<!--<div align="center">
+<img src="images/flash.jpg" width="912" height="188"/>
+</div>-->
+<!-- Start Featured -->
+<div id="featured">
+
+<div id="featured_left">
+
+</div>
+
+
+
+</div>
+<!-- End Featured -->
+
+<!-- Start Featured Sub -->
+<div id="featured_sub_wrapper">
+<table width="912" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top" align="left"><div><a href="training.php"><img src="images/sub1.gif" alt="" id="Sub1" width="294" height="100"></a></div></td>
+<td valign="top" align="center"><div><a href="onetoone.php"><img src="images/onetoone copy(1).gif" alt="" id="Sub2" width="294" height="100"></a></div></td>
+<td valign="top" align="right" style="padding-left:12px;"><div style="background:url(images/loginbg.gif); width:294px; height:100px">
+<form action="user_login.php" method="post" name="FRMLOGIN1" id="FRMLOGIN1" onsubmit="return checklogin();">
+<table width="285" border="0" align="center" cellpadding="0" cellspacing="1">
+<tr>
+<td height="2" colspan="2" class="logintext"></td>
+</tr>
+<tr>
+<td width="78" height="28" class="logintext">USER ID </td>
+<td width="204"><label>
+<input name="TXUSERID" id="TXUSERID" type="text" size="30" />
+</label></td>
+</tr>
+<tr>
+<td height="28" class="logintext">PASSWORD</td>
+<td><label>
+<input name="TXPASSWORD" id="TXPASSWORD" type="password" size="30" />
+</label></td>
+</tr>
+<tr>
+<td height="33" align="left" valign="top"><input name="submit" type="image" src="images/loginbutton.gif" /></td>
+<td class="logintextfgt"><a href="forgotpwd.php">FORGOT PASSWORD?</a> <bR />
+NEW MEMBER? <a href="register.php">REGISTER HERE </a></td>
+</tr>
+</table>
+</form>
+</div></td>
+</tr>
+
+<tr>
+<td valign="top" align="left"><div><a href="apprenticeship.php"><img src="images/sub4.gif" alt="" id="Sub1" width="294" height="100"></a></div></td>
+<td valign="top" align="center"><div><a href="resume_writing.php"><img src="images/sub5.gif" alt="" id="Sub2" width="294" height="100"></a></div></td>
+<td valign="top" align="right"><div><a href="jobsearch.php"><img src="images/sub6.gif" alt="" id="Sub3" width="294" height="100"></a></div></td>
+</tr>
+
+<tr>
+<td valign="top" align="left"><div><a href="job-interview.php"><img src="images/sub7.gif" alt="" id="Sub1" width="294" height="100"></a></div></td>
+<td valign="top" align="center"><div><a href="writing-a-cover-letter.php"><img src="images/sub8.gif" alt="" id="Sub2" width="294" height="100"></a></div></td>
+<td valign="top" align="right"><div><a href="cvupload.php"><img src="images/sub9.gif" alt="" id="Sub3" width="294" height="100"></a></div></td>
+</tr>
+
+</tbody></table>
+</div>
+<!-- End Featured Sub -->
+
+<!-- Start Content Rounded Corners Top -->
+<div id="content_rt"></div>
+<!-- End Content Rounded Corners Top -->
+
+<!-- Start Content -->
+<div id="content">
+
+<!-- Start Content Left -->
+<div id="content_left" class="content">
+<div>
+<!--<div class="content_left_h"><h3><cufon style="width: 112px; height: 22px; color:#000000" alt="Career Profile of The Month " class="cufon cufon-canvas"><canvas style="width: 138px; height: 29px; top: -4px; left: 0px;" height="29" width="138"></canvas>
+<cufontext>Career Profile of The Month </cufontext></cufon></h3></div>
+<p></p><iframe width="520" height="326" src="http://www.youtube.com/embed/_EZ7HAVabgs?rel=0" frameborder="0" allowfullscreen></iframe>-->
+<div style="padding-top:0px;">&nbsp;</div>
+<script type="text/javascript" src="http://careersboxstatic.s3.amazonaws.com/flowplayer-3.2.6.min.js"></script><div style='height: 345px; width: 444px; background-image: url(http://careersboxstatic.s3.amazonaws.com/player_back.png); background-repeat: no-repeat; font-family: Arial, Helvetica, sans-serif; color: #FFF; font-weight: bold; font-size: 22px;'><div style='width: 370px; position: relative;  left: 35px; top: 22px;'><a style='color: #FFF; text-decoration: none;' onMouseOver='this.style.textDecoration="underline";' onMouseOut='this.style.textDecoration="none";' href='http://www.careersbox.co.uk'>Visit Careers<span style='color: #C1178D'>box</span> TV</a></div><div style='width: 428px; height: 270px; position: relative;  left: 8px; top: 37px;'><a href='http://www.careersbox.co.uk/video/careersboxtv/careersbox/apprenticeships_b_careersbox_700.mp4' style="display: block;width: 428px;height: 243px" id="player"></a><script type='text/javascript'>flowplayer("player", "http://careersboxstatic.s3.amazonaws.com/flowplayer.commercial-3.2.7.swf",{clip: {autoPlay: false,autoBuffering: true,scaling: 'orig'},plugins: {controls: {progressGradient: 'medium',progressColor: '#C1188D',bufferColor: '#E492CB',borderRadius: '0px',sliderGradient: 'none',volumeSliderGradient: 'none',bufferGradient: 'none',timeBgColor: '#555555',tooltipTextColor: '#ffffff',buttonOverColor: '#728B94',tooltipColor: '#5F747C',backgroundColor: '#262626',backgroundGradient: [0.6,0.3,0,0,0],volumeSliderColor: '#000000',sliderColor: '#000000',timeColor: '#d43a85',durationColor:  '#ffffff',buttonColor:  '#737373',height:  24,opacity: 1.0 }}});</script></div></div>
+<div class="content_left_h"><h3><cufon style="width: 80px; height: 22px;" alt="FOLLOW US " class="cufon cufon-canvas"><canvas style="width: 106px; height: 29px; top: -4px; left: 0px;" height="29" width="106"></canvas>
+<cufontext>FOLLOW US </cufontext></cufon></h3></div>
+<p><strong>Follow us on facebook</strong>
+<a href="http://www.facebook.com/pages/CareerPaths-Online/112757125402937?v=wall" target="_blank"> <img src="images/facebook.png" alt="Facebook" width="64" height="64" align="absmiddle" border="0" /></a></p>
+</div>
+</div>
+<!-- End Content Left -->
+
+<!-- Start Content Right -->
+<?php include "includes/rightpanel.php"; ?>
+<!-- End Content Right -->
+
+<br style="clear: both;">
+</div>
+<!-- End Content -->
+
+<!-- Start Content Rounded Corners Bottom -->
+<div id="content_rb"></div>
+<!-- End Content Rounded Corners Bottom -->
+
+<!-- Start Footer -->
+<?php include "includes/footer.php"; ?>
+<!-- End Footer -->
+
+</div>
+<!-- End Wrapper -->
+
+<script type="text/javascript"> Cufon.now(); </script>
+<div style="display: none;" id="lbOverlay"></div><div style="display: none;" id="lbCenter"><div id="lbImage"><div style="position: relative;"><a id="lbPrevLink" href="#"></a><a id="lbNextLink" href="#"></a></div></div></div><div style="display: none;" id="lbBottomContainer"><div id="lbBottom"><a id="lbCloseLink" href="#"></a><div id="lbCaption"></div><div id="lbNumber"></div><div style="clear: both;"></div></div></div>
+</body>
+</html>

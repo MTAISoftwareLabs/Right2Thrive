@@ -1,0 +1,455 @@
+/**
+ * Public pages (login, register) — aligns with LMS tokens
+ */
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-canvas);
+}
+
+.hub-wordmark {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  background: var(--hub-wordmark-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hub-wordmark--light {
+  background: none;
+  color: #fff;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+
+/* Login hero — tight under header, no extra vertical gap */
+.user-login-page .home-banner.hub-home-banner {
+  margin: 0 !important;
+  padding-top: 0.35rem;
+  padding-bottom: 0.75rem;
+  isolation: isolate;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Login hero — logo-accurate wordmark on dark gradient */
+.user-login-page .home-banner .hub-banner-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  max-width: 100%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  box-sizing: border-box;
+}
+
+.user-login-page .home-banner .hub-banner-line {
+  display: block;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 100%;
+}
+
+.user-login-page .home-banner .hub-banner-line--wordmark {
+  margin-bottom: 0.1rem;
+}
+
+.user-login-page .home-banner .hub-header-wordmark {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.user-login-page .home-banner .hub-header-wordmark--on-dark .hub-wm-blue,
+.user-login-page .home-banner .hub-header-wordmark--on-dark .hub-wm-uk {
+  color: #9ccfef;
+}
+
+.user-login-page .home-banner .hub-header-wordmark--on-dark .hub-wm-orange {
+  color: #f5c84a;
+}
+
+.user-login-page .home-banner .hub-header-wordmark .hub-wm-uk {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.user-login-page .home-banner .hub-banner-line--collective {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1rem, 3.8vw, 1.45rem);
+  letter-spacing: 0.06em;
+  color: #7ce89a;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.user-login-page .home-banner .hub-banner-line--full-title {
+  white-space: normal;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(0.85rem, 3.2vw, 1.25rem);
+  line-height: 1.35;
+}
+
+@media screen and (max-width: 380px) {
+  .user-login-page .home-banner .hub-header-wordmark {
+    white-space: normal;
+  }
+  .user-login-page .home-banner .hub-banner-line--collective {
+    white-space: normal;
+  }
+}
+
+.user-login-page .home-banner .hub-banner-line--hub {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 5vw, 2rem);
+  font-style: italic;
+  color: #f5c84a;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.user-login-page .home-banner h2.hub-banner-title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(1.65rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0 !important;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+}
+
+.user-login-page::before {
+  background: linear-gradient(
+    145deg,
+    #0d4a66 0%,
+    #1b8eb8 38%,
+    #2a6040 100%
+  );
+  opacity: 0.94;
+}
+
+.user-log-left-blocks {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.user-log-left-blocks h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.35;
+  color: #fff;
+}
+
+.user-log-left-blocks ul li {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.user-login-page .user-auth-section {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22) !important;
+  min-width: 0;
+  padding-bottom: 1.25rem;
+  margin-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.user-auth-section form .form-group label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #fff;
+}
+
+.user-auth-section .form-control {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.user-auth-section .form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 142, 184, 0.28);
+}
+
+.user-auth-section .btn-primary {
+  background: linear-gradient(180deg, #35a8d4 0%, var(--color-primary) 55%, #126a8a 100%);
+  border-color: #126a8a;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(27, 142, 184, 0.32);
+  transition: filter var(--transition-base), transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.user-auth-section .btn-primary:hover {
+  filter: brightness(1.06);
+  border-color: #0f5a73;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(27, 142, 184, 0.38);
+}
+
+.user-auth-section .btn-outline-primary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.85);
+  background-color: transparent;
+}
+
+.user-auth-section .btn-outline-primary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+  color: #fff;
+}
+
+.user-auth-section .form-links {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.user-auth-section .form-links a {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.user-auth-section .form-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.user-auth-section .lfm.alert {
+  border-radius: var(--radius-md);
+  border: none;
+}
+
+.header-area .main-menu .menu-list a:focus-visible,
+.user-auth-section a:focus-visible,
+.user-auth-section button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media screen and (max-width: 991px) {
+  /*
+   * Main .container comes after <header> in the DOM, so it paints on top by default and
+   * hides the mobile dropdown. Keep the public header (and its collapse) above the page body.
+   */
+  .user-login-page .hub-public-header {
+    position: relative;
+    z-index: 1030;
+  }
+
+  .user-login-page > .container {
+    position: relative;
+    z-index: 0;
+  }
+
+  .user-auth-section {
+    z-index: auto !important;
+  }
+}
+
+.header-area {
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Public chrome — Bootstrap 5 navbar (user_login) */
+.hub-public-header .navbar {
+  z-index: 3;
+  align-items: center;
+}
+
+.hub-public-header__logo {
+  display: block;
+  max-height: 56px;
+  width: auto;
+  height: auto;
+}
+
+.hub-public-header__toggler {
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.55rem;
+}
+
+.hub-public-nav .nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.65rem;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.hub-public-nav .nav-link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-muted);
+}
+
+@media screen and (max-width: 991px) {
+  .user-login-page .home-banner.hub-home-banner {
+    margin-bottom: 0.75rem !important;
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .hub-public-header .container {
+    position: relative;
+  }
+
+  .hub-public-header .navbar {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+  }
+
+  .hub-public-header .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    right: 0;
+    z-index: 1040;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    padding: 0.55rem;
+    max-height: min(80vh, calc(100dvh - 5.5rem));
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Column + wrap was packing links into side columns; only first column showed */
+  .hub-public-header .hub-public-nav {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    row-gap: 0.1rem;
+  }
+
+  .hub-public-header .hub-public-nav .nav-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hub-public-header .hub-public-nav .nav-link {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.55rem 0.7rem;
+    white-space: normal;
+  }
+
+  .hub-public-header .hub-public-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    justify-content: flex-start;
+  }
+}
+
+.hub-public-social__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--header-tap-min);
+  min-height: var(--header-tap-min);
+  padding: 0.35rem;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hub-public-social__link:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.hub-public-social__link img {
+  display: block;
+  border-radius: 50%;
+}
+
+.user-login-page .container {
+  padding-bottom: 0;
+}
+
+/* Keep home-indicator / thumb clearance on the footer only — avoids extra “empty” band via container padding */
+.user-login-page .copywrite {
+  padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+}
+
+.user-login-page .row.justify-content-center {
+  min-width: 0;
+}
+
+/* Register / form card */
+h1.pagetitle {
+  color: var(--color-primary);
+  font-style: normal;
+  font-weight: 800;
+  font-family: var(--font-sans);
+}
+
+.row.form-card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md), var(--shadow-inset-soft);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.form-card .form-card-head {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #126a8a 100%);
+  font-family: var(--font-sans);
+}
+
+.form-section {
+  background: var(--color-surface-muted);
+  padding: var(--space-5);
+}
+
+.form-title,
+.form-subtitle {
+  font-family: var(--font-sans);
+}
+
+.form-subtitle {
+  border-bottom-color: var(--color-border);
+}
+
+/* Career assessment: css/career-assessment.css (loaded on career_assessment.php only) */

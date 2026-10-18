@@ -1,0 +1,39 @@
+error  1
+ 
+on gcse_retakes.php page the css has not been appllied  properly.
+
+error  2
+
+on company.php page the css has not been appllied  properly.
+
+error 3
+
+on aboutus.php page the css has not been appllied  properly.
+
+error 4
+
+from site map page the Apprenticeships link is not working.
+
+error 5
+
+from site map page the e2e link is not working.
+
+error 6
+
+from site map page the client guidance policy link is not working.
+
+error 7
+
+from site map page the Christmas Work link is not working.
+
+error 8
+
+from site map page the How do I decide link is not working.
+
+error 9
+
+from site map page the faq link is not working.
+
+error 10
+
+from site map page the products link is not working.

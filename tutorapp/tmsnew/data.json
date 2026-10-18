@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "type": "survey",
+      "questions": [
+        {
+          "text": "Feeling nervous?",
+          "type": "likert",
+          "options": ["Not at all", "Several days", "More than half the days", "Nearly every day"]
+        }
+      ]
+    }
+  ]
+}

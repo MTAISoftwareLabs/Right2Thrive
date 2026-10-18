@@ -1,0 +1,71 @@
+<div>
+	<table cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_GView" style="color:#333333;border-style:Outset;width:100%;border-collapse:collapse;text-align: left; font-size: small;">
+		<tr style="color:Black;background-color:#CED8E1;border-style:Outset;font-weight:bold;">
+			<th scope="col">District</th><th scope="col">Total no of Panchayats</th><th scope="col">Publication for inviting objection and suggestion</th><th scope="col">Publication not inviting objection and suggestion</th><th scope="col">Parivar  Register online  e-Parivar status</th><th scope="col">Gram Panchayats have not completed  the procedure</th><th scope="col">Online copy of Parivar Register</th>
+		</tr><tr style="color:#333333;background-color:#F7F6F3;width:17%;">
+			<td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl02_lblLocation">BILASPUR</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl02_lblamount0">151</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl02_lblamount1">151</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl02_lblamount2">0</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl02_lblamount3">151</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl02_lblamount4">0</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl02_lblamount5">151</span>
+                            </td>
+		</tr><tr style="color:#284775;background-color:White;width:17%;">
+			<td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl03_lblLocation">SHIMLA</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl03_lblamount0">1</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl03_lblamount1">1</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl03_lblamount2">1</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl03_lblamount3">1</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl03_lblamount4">1</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl03_lblamount5">1</span>
+                            </td>
+		</tr><tr style="color:#333333;background-color:#F7F6F3;width:17%;">
+			<td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl04_lblLocation">SIRMAUR</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl04_lblamount0">228</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl04_lblamount1">41</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl04_lblamount2">0</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl04_lblamount3">41</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl04_lblamount4">0</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl04_lblamount5">41</span>
+                            </td>
+		</tr><tr style="color:#0000CC;background-color:#BDD2D2;border-color:Black;border-style:Outset;font-weight:bold;font-style:italic;">
+			<td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl05_lbltxttotal">Total : </span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl05_lblTotal">380</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl05_lblTotal1">193</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl05_lblTotal2">1</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl05_lblTotal3">193</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl05_lblTotal4">1</span>
+                            </td><td>
+                            <span id="ctl00_ContentPlaceHolder1_GView_ctl05_lblTotal5">193</span>
+                            </td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,28 @@
+{
+    "user_id": 226,
+    "questionnaire": {
+        "submitted_at": "2026-05-17T13:23:58+01:00",
+        "in_work": "1",
+        "qualifications_held": "demo",
+        "employment_detail": "demo",
+        "career_interests": "demo",
+        "qualifications_wanted": "demo",
+        "skills": "demo",
+        "hobbies": "demo",
+        "has_disability": "0",
+        "disability_detail": "",
+        "terms_accepted": true,
+        "imported_from_legacy": true
+    },
+    "personal": {
+        "TXusername": "demo",
+        "TXemailid": "cleeown@yahoo.co.uk",
+        "CBOcountry": "DENMARK",
+        "TXtelephone": "0007",
+        "TXmobile": "",
+        "TXbdate": "1960-01-01",
+        "TXethnicity": "Chinese",
+        "rnd": "Male",
+        "legacy_import": true
+    }
+}

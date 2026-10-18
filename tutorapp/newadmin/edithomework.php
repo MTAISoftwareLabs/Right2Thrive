@@ -1,0 +1,391 @@
+<?php
+//@session_start();
+@ob_start();
+include_once 'dbConnection.php';
+require_once __DIR__ . '/admin_auth.php';
+$homeworkid = $_GET['id'];
+$query = "select * from cpo_homework where I_homeworkid = ".$homeworkid."";
+$result = runquery1($query) or die('could note execute'.mysqli_error());
+$rslist = mysqli_fetch_array($result);
+$sub_id = $rslist['I_Subject'];
+$tutor = $rslist['I_tutorid'];
+$homework = $rslist['V_title'];
+$ddate=explode('-',$rslist["D_due_date"]);
+$adate=explode('-',$rslist["D_assign_date"]);
+?>
+<html>
+<head>
+<title>Edit Homework</title>
+<link href="css/adminstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="../tms/calendar1.js"></script>
+<script language="JavaScript">
+function validation()
+{
+	var temp = document.frmhomework.txtddate.value.split('/');
+	var duedate = temp[2]+temp[1]+temp[0];
+	
+	var tempa = document.frmhomework.txtadate.value.split('/');
+	var assign = tempa[2]+tempa[1]+tempa[0];
+	
+	var myDrop = document.frmhomework.elements['sel_learner[]'];
+	var selectCount = 0;
+	var dropLength = myDrop.length
+	for(var i=0; i<dropLength; i++)
+	{
+		if(myDrop.options[i].selected == true && myDrop.options[i].value !='')
+		{
+			selectCount++;
+		}
+	}
+	if(selectCount<1)
+	{
+		alert('Please select at least one learner.');
+		return false;
+	}
+	if(document.frmhomework.txthomeworktitle.value=="")
+	{
+		alert("Homework Title can not be blank!");
+		document.frmhomework.txthomeworktitle.focus();
+		return false;
+	}	
+	if(assign > duedate)
+	{
+		alert("Due date must be greater than or equal to assign date.");
+		document.frmhomework.txtddate.focus();
+		return false;
+	}
+	return true;
+}
+function pickdate(obj)
+{
+	var mydatetime = new calendar1(document.forms['frmhomework'].elements[obj]);
+	mydatetime.year_scroll = true;
+	mydatetime.time_comp = false;
+	mydatetime.popup();
+}
+function get_home(tutor,subject,lesson)
+{
+	var xmlHttp;
+	try
+	{
+		// Firefox, Opera 8.0+, Safari
+		xmlHttp=new XMLHttpRequest();
+	}
+	catch (e)
+	{
+		// Internet Explorer
+		try
+		{
+			xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e)
+		{
+			try
+			{
+				xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e)
+			{
+				alert("Your browser does not support AJAX!");
+				return false;
+			}
+		}
+	}
+	
+	if(tutor !='' && subject !='')
+	{
+		var query = "gethome.php?tid="+tutor+"&sub="+subject+"&lesson="+lesson;
+	}
+	else
+	{
+		document.getElementById('id_learner').style.display='none';
+		return false;
+		
+	}
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4)
+		{
+			var number = xmlHttp.responseText;
+			document.getElementById('id_learner').innerHTML= number;
+			document.getElementById('id_learner').style.display='block';
+		}
+	}
+	xmlHttp.open("GET",query,true);
+	xmlHttp.send(null);
+}
+</script>
+</head>
+<body leftmargin="0" topmargin="0" class="seffact" <?php if(!isset($_POST['hdnsubmit'])) {?> onLoad="get_home('<?=$tutor?>','<?=$sub_id?>','<?=$homework?>');" <?php } ?>>
+<?php include_once('top.php')?>
+<table width="999" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="208" valign="top"><?php include_once('add.php')?></td>
+    <td width="791" align="center" valign="top">
+<?php 
+if(isset($_POST['hdnsubmit'])  && $_POST['hdnsubmit'] ==1 )
+{
+	$sub_id = $_POST['hdn_sub'];
+	$tutor_id = $_POST['hdn_tut'];
+	$homework_title=$_POST['txthomeworktitle'];
+	$due_date=$_POST['txtddate'];
+	$assign_date=$_POST['txtadate'];
+	$ddate=explode("/",$due_date);
+	$adate=explode("/",$assign_date);
+	$due = $ddate[2]."-".$ddate[1]."-".$ddate[0];
+	$assign = $adate[2]."-".$adate[1]."-".$adate[0];
+	$sql = "delete from cpo_homework where V_title='".$homework_title."'";
+	$del =runquery1($sql);
+	for($i=0;$i<count($_POST['sel_learner']);$i++)
+	{
+		$sqluserid = "select I_user_subid from cpo_user_subject where I_studentid =".$_POST['sel_learner'][$i]." and I_tutorid=".$tutor_id." and I_subjectid=".$sub_id;
+		$usersub =runquery1($sqluserid);
+		$user_sub_id = mysqli_fetch_array($usersub);
+		
+		$addsql="insert into cpo_homework (I_Subject,D_due_date,D_assign_date,V_title,I_user_subjectid,I_tutorid,I_studentid) values (".$sub_id.",'".$due."','".$assign."','".$homework_title."',".$user_sub_id['I_user_subid'].",".$tutor_id.",".$_POST['sel_learner'][$i].")";
+		$record=runquery1($addsql) or die("could not execute query".mysqli_error());
+		if($record)
+		$msg="Homework '".$homework_title."' successfully edited.";
+		else
+		{$msg="Error in Insert.";
+		$flg = "red";}
+	}
+?>
+      <table width="97%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="10"></td>
+        </tr>
+        <tr>
+          <td class="schoolfont" align="left">Homework Admin</td>
+        </tr>
+        <tr>
+          <td class="graydotline">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td height="30px;"></td>
+        </tr>
+        <tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left"><table width="71%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="0%" align="right"><img src="images/left-corn-de.gif" /></td>
+                      <td width="25%" align="center" class="graymid"><a href="overview.php?id=homework" class="greendeactfont">Overview</a></td>
+                      <td width="0%" align="left"><img src="images/rigtht-corn-de.gif" /></td>
+					   <td width="0%" align="right"><img src="images/left-corn-de.gif" /></td>
+                      <td width="25%" align="center" class="graymid"><a href="addhomework.php" class="greendeactfont">Add</a></td>
+                      <td width="0%" align="left"><img src="images/rigtht-corn-de.gif" /></td>
+                      <td width="0%" align="right"><img src="images/left-corn-ac.gif" /></td>
+                      <td width="25%" align="center" class="midtabgreen">Edit/Delete</td>
+                      <td width="0%" align="left"><img src="images/rigtht-corn-ac.gif" /></td>
+                      <td width="0%" align="right"><img src="images/left-corn-de.gif" /></td>
+                      <td width="25%" align="center" class="graymid"><a href="listhomework.php" class="greendeactfont">List</a></td>
+                      <td width="0%" align="left"><img src="images/rigtht-corn-de.gif" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td colspan="3" class="greenborder" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td><table width="100%" border="0" cellpadding="0" cellspacing="0" >
+                                <tr>
+                                  <td bgcolor="#FFFFFF" align="center"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0" class="table">
+                                      <tr>
+                                        <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                              <td class="toheaderbg" colspan="3">Homework Information</td>
+                                            </tr>
+                                          </table></td>
+                                      </tr>
+                                    </table>
+                                </tr>
+                                <tr>
+                                  <td align="left"><table width="70%" border="0" align="center" cellpadding="0" cellspacing="1">
+                                      <tr>
+                                        <td align="center">&nbsp;</td>
+                                      </tr>
+
+									<tr>
+									<?php
+									if($flg == "red")
+									{
+								?>
+								<td colspan="2" height="35" align="center"><img src="./images/alert.gif" border="0"></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center" height="35" class="error"><?php echo $msg; ?></td>
+								<?php
+								}
+								else
+								{
+								?>
+								<td colspan="2" align="center" height="35" class="fontblue"><?php echo $msg; ?></td><?php }?>	
+								</tr>	
+                                      <tr>
+                                        <td align="center">&nbsp;</td>
+                                      </tr>
+                                      <tr> 
+								<td colspan="2" height="30" align="right">
+									<a href="./viewhomework.php"><img src="./images/go_back.gif" alt="View Homework" border="0"></a>
+								</td>
+							</tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                    </table></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                    <tr>
+                      <td width="0%"><img src="images/green_left_corn.gif" /></td>
+                      <td width="100%" class="greenborbotte"><img src="images/spacerx.gif" /></td>
+                      <td width="0%"><img src="images/green_right_corn.gif" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <?php } else {?>
+     <form action="edithomework.php?id=<?php echo $homeworkid;?>" name="frmhomework" method="post" onSubmit="return validation();">
+        <table width="97%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="10"></td>
+          </tr>
+          <tr>
+            <td class="schoolfont" align="left">Homework Admin</td>
+          </tr>
+          <tr>
+            <td class="graydotline">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="30px;"></td>
+          </tr>
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="left"><table width="71%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="0%" align="right"><img src="images/left-corn-de.gif" /></td>
+                        <td width="25%" align="center" class="graymid"><a href="overview.php?id=homework" class="greendeactfont">Overview</a></td>
+                        <td width="0%" align="left"><img src="images/rigtht-corn-de.gif" /></td>
+						<td width="0%" align="right"><img src="images/left-corn-de.gif" /></td>
+                        <td width="25%" align="center" class="graymid"><a href="addhomework.php" class="greendeactfont">Add</a></td>
+                        <td width="0%" align="left"><img src="images/rigtht-corn-de.gif" /></td>
+                        <td width="0%" align="right"><img src="images/left-corn-ac.gif" /></td>
+                        <td width="25%" align="center" class="midtabgreen">Edit/Delete</td>
+                        <td width="0%" align="left"><img src="images/rigtht-corn-ac.gif" /></td>
+                        
+                        <td width="0%" align="right"><img src="images/left-corn-de.gif" /></td>
+                        <td width="25%" align="center" class="graymid"><a href="listhomework.php" class="greendeactfont">List</a></td>
+                        <td width="0%" align="left"><img src="images/rigtht-corn-de.gif" /></td>
+                      </tr>
+                    </table></td>
+                </tr>
+                <tr>
+                  <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td colspan="3" class="greenborder" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><table width="100%" border="0" cellpadding="0" cellspacing="0" >
+                                  <tr>
+                                    <td bgcolor="#FFFFFF" align="center"><table width="100%" border="0" align="left" cellpadding="0" cellspacing="0" class="table">
+                                        <tr>
+                                          <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="toheaderbg" colspan="3">Edit <span class="schoolfont">Homework</span></td>
+                                              </tr>
+                                            </table></td>
+                                        </tr>
+                                      </table>
+                                  </tr>
+                                  <tr>
+                                    <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="bodytext">
+                                        <tr>
+                                          <td height="19" colspan="3" class="bodytext" ><div align="right">(fields marked with <font color="#FF0000">*</font> are compulsary)&nbsp;</div></td>
+                                        </tr>
+                                       <tr> 
+                      <td width="40%" height="42" class="">&nbsp;&nbsp;Subject</td>
+      						<td width="60%" ><select name="selsubject" class="textbox" disabled="disabled">
+							<option value="">Select Subject</option>
+							<?php $sqls = "select iSubjectId,vSubjectName from cpo_subjectmaster where iStatus=1";
+								$querys = runquery1($sqls);
+								while($rows = mysqli_fetch_array($querys))
+								{								
+								?>
+							<option value="<?=$rows['iSubjectId']?>" <?php if($sub_id==$rows['iSubjectId']){?> selected="selected"<?php }?>><?=$rows['vSubjectName']?></option>
+							<?php }?>
+							</select>
+							<input type="hidden" name="hdn_sub" value="<?=$sub_id?>">
+							<input type="hidden" name="hdn_tut" value="<?=$tutor?>">&nbsp;<font color="#FF0000">*</font></td>
+    															</tr>
+																<tr> 
+                      <td width="40%" height="42" class="">&nbsp;&nbsp;Tutor</td>
+      						<td width="60%" ><select name="seltutor" class="textbox" disabled="disabled">
+							<option value="">Select Tutor</option>
+							<?php $sqls = "select iUserId,vUserName from cpo_usermaster where iUserId=".$tutor;
+								$querys = runquery1($sqls);
+								while($rows = mysqli_fetch_array($querys))
+								{								
+								?>
+							<option value="<?=$rows['iUserId']?>" <?php if($tutor==$rows['iUserId']){?> selected="selected"<?php }?>><?=$rows['vUserName']?></option>
+							<?php }?>
+							</select>&nbsp;<font color="#FF0000">*</font></td>
+    															</tr>
+																<tr><td colspan="2"><div id="id_learner" style="display:block"></div></td></tr>
+																<tr> 
+										  								
+                          
+                      <td width="40%" height="42" class="">&nbsp;&nbsp;Homework Title </td>
+      																	<td width="60%" ><input type="text" name="txthomeworktitle" maxlength="100" class="textbox" size="33" value="<?php echo $rslist['V_title']?>" readonly=""> <font color="#FF0000">*</font></td>
+    															</tr>
+																<tr> 
+										  								
+                          
+                      <td width="40%" height="42" class="">&nbsp;&nbsp;Assign Date</td>
+      						<td width="60%" ><input name="txtadate" type="text" class="textbox" readonly value="<?php echo $adate[2]."/".$adate[1]."/".$adate[0] ?>">&nbsp;<a href="javascript:pickdate('txtadate')"><img src="images/cal.gif" width="16" height="16" border="0" alt="Click Here to Pick up the date"></a> <font color="#FF0000">*</font> </td>
+    															</tr>
+																<tr> 
+										  								
+                          
+                      <td width="40%" height="42" class="">&nbsp;&nbsp;Due Date</td>
+      						<td width="60%" ><input name="txtddate" type="text" class="textbox" readonly value="<?php echo $ddate[2]."/".$ddate[1]."/".$ddate[0] ?>">&nbsp;<a href="javascript:pickdate('txtddate')"><img src="images/cal.gif" width="16" height="16" border="0" alt="Click Here to Pick up the date"></a> <font color="#FF0000">*</font> </td>
+    															</tr>
+																
+							
+    															<tr> 
+      																	<td colspan="2" > <div align="right"><font face=verdana size=2><b> 
+                      &nbsp;&nbsp; 
+                     <input name="image" type="image" src="./images/update.gif" ><input type="hidden" name="hdnsubmit" value="1">
+                      &nbsp;&nbsp;<a href="viewhomework.php"><img src="images/cancel.gif"  border="0"></a> 
+                      </b></font> </div></div>
+                    </td>
+    															</tr>
+                                      </table></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                          </table></td>
+                      </tr>
+                      <tr>
+                        <td width="0%"><img src="images/green_left_corn.gif" /></td>
+                        <td width="100%" class="greenborbotte"><img src="images/spacerx.gif" /></td>
+                        <td width="0%"><img src="images/green_right_corn.gif" /></td>
+                      </tr>
+                    </table></td>
+                </tr>
+              </table></td>
+          </tr>
+        </table>
+      </form>
+      <?php }?>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
